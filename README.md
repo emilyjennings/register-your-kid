@@ -16,6 +16,17 @@ Migrations to write
 * Parents have a name and foreign key for their kid_id and class_id.
 
 
+How this app will work for a user:
+
+The user (parent) goes to '/welcome' and is prompted to log in. (They might be able to see a list of classes without logging in) they're taken to '/users'
+
+The user signs up or logs in 'users/1'. They are given an index of all class choices and their times, age groups '/users/1/classes'.
+
+The user can click a link that takes them to the show page for the class. '/classes/1' and then a link from there to sign up for the class '/users/1/classes/2' - the form here will allow them to enter multiple kids' names
+
+They can view their profile page that contains classes and the teachers '/users/1/classes', the teachers have links to their pages with their classes that they teach '/teachers/1'
+
+
 Things you may want to cover:
 
 * Ruby version
