@@ -8,14 +8,14 @@ I need models for classes, kids, parents, and teachers:
 * Teachers have many classes. Teachers have many parents through students.
 * {Kids belong to parents and belong to teachers.} Do I need a kid model? I might not.
 * Parents have many classes, and have many Teachers through classes.
-* Classes belong to teachers, and belong to parents.
+* Courses belong to teachers, and belong to parents.
 * So, the many-to-many relationship in this project is Teachers and Parents, through classes. The join table will include another attribute besides foreign keys: (age group, start time)
 
 Migrations to write
-* {kids have a name and an age and a foreign key for parent_id, teacher_id} No kid model? If so, just make it so kids can belong_to parents so parents can have_many kids? Only for that function?
-* Parents have a name, a child_name, a class_id (so they can have many classes)
+* kids have a name and an age and belong_to parents, foreign key for parent_id
+* Parents have a name
 * Teachers have a name
-* classes have a title, age group, start_time, foreign keys for teachers and parents (then can parents have many classes?)
+* Courses have a title, age group, start_time, foreign keys for teachers and parents (then can parents have many classes?)
 
 
 How this app will work for a user:
