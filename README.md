@@ -28,6 +28,12 @@ The user can click a link that takes them to the show page for the class. '/clas
 
 They can view their profile page that contains classes and the teachers '/users/1/classes', the teachers have links to their pages with their classes that they teach '/teachers/1'
 
+12.18.18 notes after creating migrations and models and controllers:
+
+make resource routes for the landing page '/welcome' - this will be a view in parent, who is the user.
+
+make resource routes for the form to sign up for a class, the parent signs in and then sees the course index and goes to the page of the course and fills in the form. Need nested resources because the session assumes the parent already - can populate the kids they have in the form?
+
 
 Things you may want to cover:
 
