@@ -5,15 +5,17 @@ This is a tool for an education center to use for parents to sign their kids up 
 12.17.18
 Notes while setting this up so far -
 I need models for classes, kids, parents, and teachers:
-* Teachers have many students and have many classes. Teachers have many parents through students.
-* Kids have many classes and belong to parents and belong to teachers.
-* Parents have many classes and many kids, and have many Teachers through classes.
-* Classes belong to teachers, belong to kids, and belong to parents. (is this weird?)
-* So, the many-to-many relationship in this project is Teachers and Parents, through classes. The join table will include another attribute besides foreign keys: (working on this)
+* Teachers have many classes. Teachers have many parents through students.
+* {Kids belong to parents and belong to teachers.} Do I need a kid model? I might not.
+* Parents have many classes, and have many Teachers through classes.
+* Classes belong to teachers, and belong to parents.
+* So, the many-to-many relationship in this project is Teachers and Parents, through classes. The join table will include another attribute besides foreign keys: (age group, start time)
 
 Migrations to write
-* kids have a name and an age and a foreign key for parent_id
-* Parents have a name and foreign key for their kid_id and class_id.
+* {kids have a name and an age and a foreign key for parent_id, teacher_id} No kid model? If so, just make it so kids can belong_to parents so parents can have_many kids? Only for that function?
+* Parents have a name, a child_name, a class_id (so they can have many classes)
+* Teachers have a name
+* classes have a title, age group, start_time, foreign keys for teachers and parents (then can parents have many classes?)
 
 
 How this app will work for a user:
