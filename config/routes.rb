@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   # get 'parent/create'
   # get 'course/index'
 
-  resources :parents, only: [:index, :show]
-  resources :teachers, only: [:index, :show]
-  resources :kids
-  resources :courses, only: [:index, :show]
+  resources :parents do
+    resources :teachers, only: [:index, :show]
+    resources :kids
+    resources :courses, only: [:index, :show]
+  end
 
   root 'course/welcome'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
