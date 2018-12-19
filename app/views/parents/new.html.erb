@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<h1>Sign Up</h1>
+
+<%= form_for(@parent) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%=f.submit 'Submit' %>
+<%end%>
