@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   # get 'parent/new'
   # get 'parent/create'
   # get 'course/index'
-  #
+  # get '/login' => 'sessions#new'
+  # post '/sessions' => 'sessions#create'
+  #not sure i need this
+
   resources :parents do
     resources :teachers, only: [:index, :show]
     resources :kids, only: [:show]
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :parents
+  resources :sessions
 
   root 'parents#welcome'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
