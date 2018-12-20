@@ -1,0 +1,6 @@
+<h1>Log In!</h1>
+
+<%= form_for(:session, url: parent_path) do |f|%>
+  <%=f.text_area :name %>
+  <%=f.submit 'Submit'%>
+<%end%>

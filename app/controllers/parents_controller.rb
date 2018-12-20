@@ -5,6 +5,7 @@ class ParentsController < ApplicationController
   end
 
   def new
+    @parent = Parent.new(name: params[:name])
     render :new
   end
 
