@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  # test "should get new" do
+  #   get login_path
+  #   assert_response :success
+  # end
+
   def new
   end
 

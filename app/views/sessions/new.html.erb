@@ -1,6 +1,8 @@
 <h1>Log In!</h1>
 
-<%= form_for(:session, url: parent_path) do |f|%>
+<%= form_for(:session, url: login_path) do |f|%>
   <%=f.text_area :name %>
   <%=f.submit 'Submit'%>
 <%end%>
+
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>

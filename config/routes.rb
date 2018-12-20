@@ -19,7 +19,10 @@ Rails.application.routes.draw do
   end
 
   resources :parents
-  resources :sessions
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  get '/signup', to: 'parents#new'
 
   root 'parents#welcome'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
