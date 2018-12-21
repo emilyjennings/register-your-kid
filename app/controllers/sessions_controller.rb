@@ -8,11 +8,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    parent = params[:name]
-    if parent.nil? || parent.empty?
+    if params.nil? || params.empty?
       redirect_to login_path
       flash[:notice] = "not allowed"
-    elsif parent
+    else
+      parent = Parent.find_by(name: params[:name])
       session[:name] = parent
       redirect_to '/'
     end
