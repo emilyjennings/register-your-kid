@@ -7,10 +7,11 @@
 <%= form_for(@parent) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <br>
   <%= f.label :password %>
   <%= f.text_field :password %>
 
   <%=f.submit 'Submit' %>
 <%end%>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<p>Not a new user? <%= link_to "Log in!", login_path %></p>

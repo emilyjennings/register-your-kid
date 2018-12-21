@@ -34,6 +34,10 @@ make resource routes for the landing page '/welcome' - this will be a view in pa
 
 make resource routes for the form to sign up for a class, the parent signs in and then sees the course index and goes to the page of the course and fills in the form. Need nested resources because the session assumes the parent already - can populate the kids they have in the form?
 
+12.21.18
+
+Make a logged_in? method to know if a user is logged in before showing something
+
 
 Things you may want to cover:
 
