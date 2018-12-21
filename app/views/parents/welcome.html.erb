@@ -2,4 +2,14 @@
 
 <%= link_to 'Sign Up', signup_path%>
 <%= link_to 'Log In', login_path%>
-<% if logged_in?%>Welcome, <%= current_user.capitalize %><% end %>
+<% if logged_in?%>Welcome, <%= current_user.name.capitalize %><% end %>
+<% if logged_in? %>
+  # This parent isn't logged in
+<% else %>
+  # This parent is logged in! Yay
+<% end %>
+
+
+<%= link_to "Log out", logout_path, method: :delete %>
+
+<%= link_to "Profile", current_user %>

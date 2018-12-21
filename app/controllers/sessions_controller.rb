@@ -8,7 +8,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:name] = params[:name]
-    redirect_to '/'
+    parent = params[:name]
+    if parent.nil? || parent.empty?
+      redirect_to login_path
+      flash[:notice] = "not allowed"
+    elsif parent
+      session[:name] = parent
+      redirect_to '/'
+    end
+  end
+
+  def delete
+    session.clear
+    @current_user = nil
   end
 end

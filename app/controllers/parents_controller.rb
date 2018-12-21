@@ -15,11 +15,17 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.new(parent_params)
     if @parent.save
-      redirect_to parents_path
+      log_in(@parent)
+      @parent = current_user
+      redirect_to parent_path(@parent)
     else
       render 'parents/new'
       flash[:notice] = "Try Again"
     end
+  end
+
+  def show
+    
   end
 
   private

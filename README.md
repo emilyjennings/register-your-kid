@@ -38,6 +38,8 @@ make resource routes for the form to sign up for a class, the parent signs in an
 
 Make a logged_in? method to know if a user is logged in before showing something
 
+Parent logs in, is directed to their profile page, has a chance to create a kid, then add classes, then log out
+
 
 Things you may want to cover:
 
