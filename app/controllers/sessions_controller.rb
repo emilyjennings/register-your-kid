@@ -8,18 +8,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params.nil? || params.empty?
+    @parent = Parent.find_by(name: params[:name])
+    if @parent.nil? || @parent.empty?
+      redirect_to root_path
+      flash[:notice] = "enter a value"
+    elsif @parent
+      session[:name] = @parent.name
       redirect_to login_path
-      flash[:notice] = "not allowed"
-    else
-      parent = Parent.find_by(name: params[:name])
-      session[:name] = parent
-      redirect_to '/'
     end
   end
 
-  def delete
+  def destroy
     session.clear
-    @current_user = nil
+    current_user = nil
   end
 end
