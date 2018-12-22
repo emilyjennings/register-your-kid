@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   #but any person can view courses and teachers without logging in too
   resources :courses, only: [:index, :show]
   resources :teachers, only: [:index, :show]
+  resources :parents
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

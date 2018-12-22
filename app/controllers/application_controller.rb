@@ -5,11 +5,15 @@ class ApplicationController < ActionController::Base
     current_user ||= Parent.find_by(name: session[:name])
   end
 
-  # def logged_in?
-  #   current_user != nil
-  # end
-  #
-  # def log_in(parent)
-  #   session[:name] = parent.name
-  # end
+  def logged_in?
+    current_user != nil
+  end
+
+
+  def log_out
+    session.delete(:parent_name)
+    current_user = nil
+  end
+
+
 end

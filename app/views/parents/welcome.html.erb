@@ -1,11 +1,14 @@
 <h1>Welcome, Parent!</h1>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
 <%= link_to 'Sign Up', signup_path%>
 <%= link_to 'Log In', login_path%>
 <% if logged_in? %>
   Please Log In
 <% else %>
-  Logged in!
+  Logged out!
 <% end %>
 
 

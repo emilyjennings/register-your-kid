@@ -4,7 +4,7 @@
 
 <h1>Hi! Sign Up</h1>
 
-<%= form_for(@parent) do |f| %>
+<%= form_for Parent.new do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
