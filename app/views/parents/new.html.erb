@@ -14,14 +14,16 @@
 
   <h3>Your kids:</h3>
   <%= f.fields_for :kids do |k| %>
-    <%= k.label :name %>
+    <%= k.label :kid_number %><br>
+    <%= k.text_field :kid_number %>
+    <br>
+    <%= k.label :name %><br>
     <%= k.text_field :name %>
     <br>
-    <%= k.label :age %>
+    <%= k.label :age %><br>
     <%= k.text_field :age %>
     <br>
-    <%= k.label :kid_number %>
-    <%= k.text_field :kid_number %>
+
 
   <%end%>
 

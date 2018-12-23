@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_133538) do
+ActiveRecord::Schema.define(version: 2018_12_23_143731) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
-    t.integer "age_group"
     t.string "start_time"
     t.integer "teacher_id"
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
+    t.string "age_group"
   end
 
   create_table "kids", force: :cascade do |t|

@@ -36,7 +36,6 @@ class ParentsController < ApplicationController
   def show
       @parent = Parent.find_by(id: session[:id])
       @kids = @parent.kids
-
   end
 
   private
