@@ -1,4 +1,8 @@
-<h1>Welcome, <%=@parent%>!</h1>
+<%if logged_in?%>
+  <h1>Welcome, <%=current_user.name%>!</h1>
+<%else%>
+  <h1>Hi! Go ahead and log in.</h1>
+<%end%>
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
@@ -8,5 +12,3 @@
 
 
 <%= link_to "Log out", logout_path, method: :delete %>
-
-<%= link_to "Profile", parents_path %>

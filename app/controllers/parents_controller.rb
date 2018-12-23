@@ -4,29 +4,30 @@ class ParentsController < ApplicationController
   # before_action :require_login, except => [:new, :create, :destroy]
 
   def welcome
-    @parent = session[:name].capitalize
+    @parent = current_user
     render :welcome
   end
 
   def index
     @parents = Parent.all
-    @parent = session[:name].capitalize
+    @parent = current_user
     render :index
 
   end
 
   def new
-
+    @parent = Parent.new
   end
 
   def create
-    @parent = Parent.new(name: params[:name], password: params[:password_digest])
+
+    @parent = Parent.new(name: params[:parent][:name], password_digest: params[:parent][:password_digest])
     #the parent gives a name and is signed up, otherwise directed back to the welcome page. If they successully sign up, they are directed to login
-    if params.nil? || params.empty?
+    if @parent.save
+      redirect_to login_path
+    else
       redirect_to root_path
       flash[:notice] = "enter a value of some kind"
-    elsif @parent.save
-      redirect_to login_path
     end
 
 
