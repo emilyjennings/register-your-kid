@@ -17,6 +17,16 @@ Migrations to write
 * Teachers have a name
 * Courses have a title, age group, start_time, foreign keys for teachers and parents (then can parents have many classes?)
 
+12.23.18
+Got the login and sessions working, nested forms to associate kids with the parent users.
+
+To do:
+* Let parents sign their kids up for classes through a nested route. They get a form with checkboxes to pick which kids are in the classes, and then the course is submitted. If this is too complicated with extra nested forms, then just let the parent sign up for classes in general, and view them in /parent/id/courses/show. The classes need to be associated with parents through parent_id attributes.
+* Create some teacher seeds and have them associated with classes through teacher_id attributes.
+* Display the teachers that the parents have on show page as well, through the classes, also in /parent/id/teacher/show with a profile about the teacher
+* Ideally, the parent can log in and then see a schedule of classes coming up. it would indeed be cool to also see which kids are in which classes. I think I need another nested form for that.
+* May also want to make a partial for some of the forms 
+
 
 How this app will work for a user:
 

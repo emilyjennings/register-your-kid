@@ -1,5 +1,5 @@
 <%if logged_in?%>
-  <h1>Welcome, <%=current_user.name%>!</h1>
+  <h1>Welcome, <%=current_user.name.capitalize%>!</h1>
   <%= link_to "Profile", parent_path(session[:id]) %>
 <%else%>
   <h1>Hi! Go ahead and log in.</h1>

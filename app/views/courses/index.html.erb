@@ -1,6 +1,7 @@
 <h1>Courses</h1>
 <% Course.all.each do |c|%>
-  <h2><%=c.title%></h2>
+
+  <h2><%=link_to c.title, course_path(c)%></h2>
   <h4><%=c.start_time%></h4>
   <h4>Age Group: <%=c.age_group%></h4>
   <p><%=c.description%></p>
