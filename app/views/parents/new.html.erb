@@ -4,12 +4,12 @@
 
 <h1>Hi! Sign Up</h1>
 
-<%= form_for Parent.new do |f| %>
+<%= form_for(@parent) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
+  <%= f.label :password_digest %>
+  <%= f.password_field :password_digest %>
 
   <%=f.submit 'Submit' %>
 <%end%>
