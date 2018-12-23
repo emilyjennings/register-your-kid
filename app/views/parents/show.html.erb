@@ -1,0 +1,12 @@
+<h1>Welcome, <%=@parent.name.capitalize%>!</h1>
+<%= link_to "Browse courses", parent_courses_path(@parent) %>
+<%= link_to "Log out", logout_path, method: :delete %>
+<%= link_to "All kids in the school", parent_kids_path(@parent) %>
+
+
+  <h3>Your kids:</h3>
+  <%@kids.each do |k|%>
+    <% if k.name.present? %>
+      <p><%=k.name.capitalize%>, age: <%=k.age%></p>
+    <%end%>
+  <%end%>
