@@ -53,7 +53,8 @@ class ParentsController < ApplicationController
     # end
 
     #the parent should be the current user so the page can be customized to them
-    @parent = Parent.find_by(name: current_user)
+    @parent = Parent.find_by(id: session[:id])
+    @kids = Kid.find_by(parent_id: session[:id])
   end
 
   # private

@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :show]
   resources :teachers, only: [:index, :show]
   resources :parents do
-    resources :kids, only: [:show, :new]
+    resources :kids
     resources :courses, only: [:index, :show]
   end
   #the parent logs in, creates their kids, and then adds courses they want
   #but any person can view courses and teachers without logging in too
-
+  resources :kids
 
   get   '/signup', to: 'parents#new'
   get   '/login',   to: 'sessions#new'
