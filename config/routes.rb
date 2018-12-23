@@ -1,26 +1,20 @@
 Rails.application.routes.draw do
-  # get 'teacher/index'
-  # get 'teacher/new'
-  # get 'teacher/create'
-  # get 'kid/new'
-  # get 'kid/create'
-  # get 'parent/index'
-  # get 'parent/new'
-  # get 'parent/create'
-  # get 'course/index'
-  # get '/login' => 'sessions#new'
-  # post '/sessions' => 'sessions#create'
-  #not sure i need this
+  #the parent logs in while also making their kids.
+  #they can see a list of ourses without logging in yet
+  #after log in, they can sign up for courses
+
   resources :parents
+  #need a list of courses and show pages for the casual viewer
   resources :courses, only: [:index, :show]
+  #list of teachers and their profiles for casual viewer
   resources :teachers, only: [:index, :show]
   resources :parents do
-    resources :kids
+    #when the parent logs in, they can go to their show page which lists their kids and then a further page that shows their courses they signed up for
     resources :courses, only: [:index, :show]
+    #a logged in parent can see all kids in the school by name
+    resources :kids, only: [:index]
   end
-  #the parent logs in, creates their kids, and then adds courses they want
-  #but any person can view courses and teachers without logging in too
-  resources :kids
+
 
   get   '/signup', to: 'parents#new'
   get   '/login',   to: 'sessions#new'

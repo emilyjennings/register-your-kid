@@ -12,21 +12,12 @@ class SessionsController < ApplicationController
     parent = Parent.find_by(name: params[:session][:name])
     if parent #&& parent.authenticate(params[:session][:password_digest])
       log_in(parent)
-      redirect_to parents_path
+      redirect_to parent_path(session[:id])
     else
       flash[:notice] = "that didn't work"
       render :new
     end
 
-
-
-    # if @parent.nil? || @parent.empty?
-    #   redirect_to root_path
-    #   flash[:notice] = "enter a value"
-    # elsif @parent
-
-      # redirect_to login_path
-    # end
   end
 
   def destroy
