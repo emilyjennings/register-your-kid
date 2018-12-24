@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.find_by(id: params[:id])
+    
   end
 
   def create

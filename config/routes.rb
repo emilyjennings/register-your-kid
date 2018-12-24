@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     #when the parent logs in, they can go to their show page which lists their kids and then a further page that shows their courses they signed up for
     resources :courses, only: [:index, :show, :new, :create]
     #a logged in parent can see all kids in the school by name
-    resources :kids, only: [:index]
+    resources :kids, only: [:index, :new, :create, :show]
   end
 
 

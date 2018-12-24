@@ -25,8 +25,13 @@ To do:
 * Create some teacher seeds and have them associated with classes through teacher_id attributes.
 * Display the teachers that the parents have on show page as well, through the classes, also in /parent/id/teacher/show with a profile about the teacher
 * Ideally, the parent can log in and then see a schedule of classes coming up. it would indeed be cool to also see which kids are in which classes. I think I need another nested form for that.
-* May also want to make a partial for some of the forms 
+* May also want to make a partial for some of the forms
 
+12.24.18 to do:
+
+* Kids are given as checkboxes so parents can sign them up
+* Display the teachers that the parents have on show page as well, through the classes, also in /parent/id/teacher/show with a profile about the teacher
+* make it so parents can log in and go to /parents/id/courses and see an upcoming schedule
 
 How this app will work for a user:
 

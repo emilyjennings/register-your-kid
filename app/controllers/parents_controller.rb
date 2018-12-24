@@ -23,7 +23,7 @@ class ParentsController < ApplicationController
   end
 
   def create
-    @parent = Parent.create(parent_params)
+    @parent = Parent.create!(parent_params)
     #the parent gives a name and is signed up, otherwise directed back to the welcome page. If they successully sign up, they are directed to login
     if @parent.save
       redirect_to login_path

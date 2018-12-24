@@ -2,7 +2,7 @@
   <h1>Welcome, <%=current_user.name.capitalize%>!</h1>
   <%= link_to "Profile", parent_path(session[:id]) %>
 <%else%>
-  <h1>Hi! Go ahead and log in.</h1>
+  <h1>Hi! Go ahead and log in or sign up.</h1>
 <%end%>
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>

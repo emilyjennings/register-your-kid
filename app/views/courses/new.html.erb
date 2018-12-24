@@ -2,5 +2,7 @@
 
 <%=form_for @course do |f|%>
   <%= f.collection_check_boxes :kid_id, Kid.all, :id, :name %>
+
+  
   <%= f.submit %>
 <%end%>
