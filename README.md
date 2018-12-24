@@ -29,7 +29,8 @@ To do:
 
 12.24.18 to do:
 
-* Kids are given as checkboxes so parents can sign them up
+* Kids need to be updated to have a course_id. After browsing courses, on the show page for courses there's a form. The form is for kids. It lets you check the box next to the kid you want in that course then updates the kid.
+alternate: there's just one form in kids to update the kid, where courses are shown in a dropdown or checkboxes to add course_id to kids.
 * Display the teachers that the parents have on show page as well, through the classes, also in /parent/id/teacher/show with a profile about the teacher
 * make it so parents can log in and go to /parents/id/courses and see an upcoming schedule
 

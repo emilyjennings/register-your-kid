@@ -1,8 +1,0 @@
-<h3>Sign up here for <%=@course.title%>:</h3>
-
-<%=form_for @course do |f|%>
-  <%= f.collection_check_boxes :kid_id, Kid.all, :id, :name %>
-
-  
-  <%= f.submit %>
-<%end%>
