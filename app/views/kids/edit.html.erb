@@ -1,7 +1,7 @@
 <h3>Sign up <%=@kid.name%> for a course:</h3>
 
-<%=form_for @kid do |f|%>
-  <%= f.collection_check_boxes :course_ids, Course.all, :id, :title%>
+<%=form_for @kid do |parent_kid|%>
+  <%= f.collection_select :course, Course.all, :id, :title%>
 
   <%= f.submit %>
 <%end%>
