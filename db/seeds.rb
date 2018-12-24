@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Parent.create!(id: 0, name: "Nobody", password_digest: "nothing")
 Teacher.create!(name: "Ms. Mac", bio: "Ms. Mac is a freelance artist who loves teaching art and music to young children.")
 Teacher.create!(name: "Sylvia", bio: "Sylvia moved to the United States in the 80s to become a performer and has taught in DC for 10 years. She is also the director of the center.")
 Teacher.create!(name: "Marco", bio: "Marco doesn't really teach but he is a real person who works at the center and I needed to fill out one more teacher to seed the database, so here he is.")
