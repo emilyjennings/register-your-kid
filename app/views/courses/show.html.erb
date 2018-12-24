@@ -3,3 +3,6 @@
 <h3>Sign up here:</h3>
 
 <%=form_for @course do |f|%>
+  <%= f.collection_check_boxes :parent_id, Parent.all, :id, :name %>
+  <%= f.submit %>
+<%end%>
