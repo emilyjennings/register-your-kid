@@ -1,8 +1,4 @@
 <h1><%=@course.title%>, <%=@course.start_time%></h1>
+<p><%=@course.description</p>%>
 
-<h3>Sign up here:</h3>
-
-<%=form_for @course do |f|%>
-  <%= f.collection_check_boxes :parent_id, Parent.all, :id, :name %>
-  <%= f.submit %>
-<%end%>
+<%=link_to "Sign Your Kid Up for This!", new_parent_course_path(@course)%>

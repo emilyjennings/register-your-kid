@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
-  belongs_to :parent
+  has_many :kids
+  has_many :parents, through: :kids
   belongs_to :teacher
   # scope :earlychildhood, -> (age) { where(age < 5)}
   # scope :youth, -> (age) { where(age > 5 && age < 12)}

@@ -1,7 +1,6 @@
 class Parent < ApplicationRecord
-  has_many :courses
-  has_many :teachers, through: :courses
   has_many :kids
+  has_many :courses, through: :kids
   has_secure_password
   validates :name, :presence => true
   validates :name, :uniqueness => true

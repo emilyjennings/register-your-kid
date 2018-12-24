@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_223301) do
+ActiveRecord::Schema.define(version: 2018_12_18_122600) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
-    t.string "start_time"
+    t.string "age_group"
+    t.datetime "start_time"
     t.integer "teacher_id"
-    t.integer "parent_id"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
-    t.string "age_group"
   end
 
   create_table "kids", force: :cascade do |t|
     t.string "name"
     t.integer "age"
+    t.integer "parent_id"
+    t.integer "course_id"
+    t.integer "kid_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "parent_id"
-    t.string "kid_number"
   end
 
   create_table "parents", force: :cascade do |t|
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 2018_12_23_223301) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "bio"
   end
 
 end
