@@ -15,11 +15,14 @@ Rails.application.routes.draw do
     resources :kids, only: [:index, :show, :update, :create, :edit, :new]
   end
 
+  resources :kids
+
 
   get   '/signup', to: 'parents#new'
   get   '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
   # can instead be post '/logout',  to: 'sessions#destroy'
 
 

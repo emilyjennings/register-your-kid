@@ -15,7 +15,7 @@ class KidsController < ApplicationController
 
   def update
     @kid = Kid.find(params[:id])
-    @kid.update(course_id: params[course_ids:[]])
+    @kid.update(course_id: params[:id])
     redirect_to parent_path(session[:id])
   end
 
