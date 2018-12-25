@@ -1,19 +1,8 @@
-<h3>Sign up your kids for a course:</h3>
+<h3>Sign up <%=@kid.name%> for a course:</h3>
 
-<h3>Your kids:</h3>
-<%@kids.each do |k|%>
-  <% if k.name.present? %>
-    <p><%=k.name.capitalize%>, age: <%=k.age%></p>
-  <%end%>
-  <% if k.course_id.present?%>
-    <p>Course: <%=Course.find(k.course_id).title%>, <%=Course.find(k.course_id).start_time%></p>
-  <%end%>
-  <% if k.name.present? %>
-    <%=form_for k do |f|%>
-      <%= f.collection_select :course, Course.all, :id, :title%>
 
-      <%= f.submit %>
-    <%end%>
-  <%end%>
+<%=form_for :kids, url: '/parents/:parent_id/kids/:id', method: :patch do |f|%>
+  <%= f.collection_select :course_id, Course.all, :id, :title%>
 
+  <%= f.submit %>
 <%end%>
