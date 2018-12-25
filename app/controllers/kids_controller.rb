@@ -9,7 +9,8 @@ class KidsController < ApplicationController
   end
 
   def edit
-    @kid = Kid.find(params[:id])
+    @parent = Parent.find_by(id: session[:id])
+    @kids = @parent.kids
     @courses = Course.all
   end
 

@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   #the parent logs in while also making their kids.
   #they can see a list of ourses without logging in yet
   #after log in, they can sign up for courses
-
+  patch '/parents/:parent_id/kids/:id', to: 'kids#update'
+  get   '/signup', to: 'parents#new'
+  get   '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  
   resources :parents
   #need a list of courses and show pages for the casual viewer
   resources :courses, only: [:index, :show]
@@ -18,10 +23,6 @@ Rails.application.routes.draw do
   resources :kids
 
 
-  get   '/signup', to: 'parents#new'
-  get   '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
 
   # can instead be post '/logout',  to: 'sessions#destroy'
 

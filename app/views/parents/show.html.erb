@@ -10,7 +10,7 @@
       <p><%=k.name.capitalize%>, age: <%=k.age%></p>
     <%end%>
     <% if k.course_id.present?%>
-      <p>Course: <%=Course.find_by(id: k.course_id).title%>, <%=Course.find_by(id: k.course_id).start_time%></p>
+      <p>Course: <%=Course.find(k.course_id).title%>, <%=Course.find(k.course_id).start_time%></p>
     <%end%>
     <% if k.name.present? %>
       <p><%= link_to "Sign this kid up for some classes", edit_parent_kid_path(k) %></p>
