@@ -20,10 +20,9 @@ class KidsController < ApplicationController
   end
 
   def update
-    binding.pry
     @kid = Kid.find(params[:id])
     #need to make sue the course id is the right params
-    @kid.update(course_id: params[:course_id])
+    @kid.update(course_id: params[:kids][:course_id])
     redirect_to parent_path(session[:id])
   end
 
