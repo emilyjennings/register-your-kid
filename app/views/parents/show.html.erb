@@ -8,13 +8,16 @@
   <%@kids.each do |k|%>
     <% if k.name.present? %>
       <p><%=k.name.capitalize%>, age: <%=k.age%></p>
+      <h3>Sign up <%=k.name%> for a course:</h3>
+      <%=form_for k, url: '/parents/:parent_id/kids/:id', method: :patch do |f|%>
+        <%= f.collection_select :course_id, Course.all, :id, :title%>
+
+        <%= f.submit %>
+      <%end%>
     <%end%>
     <% if k.course_id.present?%>
       <%binding.pry%>
       <p>Course: <%=Course.find(k.course_id).title%>, <%=Course.find(k.course_id).start_time%></p>
-    <%end%>
-    <% if k.name.present? %>
-      <p><%= link_to "Sign this kid up for some classes", edit_parent_kid_path(k) %></p>
     <%end%>
 
   <%end%>
