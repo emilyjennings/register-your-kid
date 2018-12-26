@@ -1,6 +1,6 @@
 <h1>Welcome, <%=@parent.name.capitalize%>!</h1>
 <p><%= link_to "List of all courses", parent_courses_path(@parent) %></p>
-
+<h2>You can sign each kid up for one course only.</h2>
 
   <h2>Your kids:</h2>
   <%@kids.each do |k|%>
