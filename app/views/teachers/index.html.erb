@@ -1,5 +1,7 @@
 <h1>Teacher List</h1>
 <%@teachers.each do |t|%>
-  <%=link_to <%t.name%>, teacher_path(t)%>
-  <%=t.bio%>
+  <%=link_to "#{t.name}", teacher_path(t)%>
 <%end%>
+
+<%= link_to "Go Back", parent_path(current_user)%>
+<p><%= link_to "Log Out", logout_path, method: :delete %></p>

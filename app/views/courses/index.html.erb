@@ -6,3 +6,7 @@
   <h4>Age Group: <%=c.age_group%></h4>
   <p><%=c.description%></p>
 <%end%>
+
+
+<%= link_to "Go Back", parent_path(current_user)%>
+<p><%= link_to "Log Out", logout_path, method: :delete %></p>

@@ -1,8 +1,0 @@
-<h3>Sign up <%=@kid.name%> for a course:</h3>
-
-
-<%=form_for @kid do |f|%>
-  <%= f.collection_select :course_id, Course.all, :id, :title%>
-
-  <%= f.submit %>
-<%end%>

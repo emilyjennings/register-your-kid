@@ -1,4 +1,12 @@
-<h1><%=@course.title%>, <%=@course.start_time%></h1>
-<p><%=@course.description</p>%>
+<h1><%=@course.title%></h1>
+<h2><%=@course.start_time%></h2>
+<p><%=@course.description%></p>
+<h3>Age Group: <%=@course.age_group%></h3>
 
-<%=link_to "Sign Your Kid Up for This!", new_parent_course_path(@course)%>
+<h2>Students signed up:</h2>
+<%@course.kids.each do |k|%>
+  <p><%=k.name.capitalize%>, age: <%=k.age%></p>
+<%end%>
+
+<%= link_to "Go Back", courses_path%>
+<p><%= link_to "Log Out", logout_path, method: :delete %></p>

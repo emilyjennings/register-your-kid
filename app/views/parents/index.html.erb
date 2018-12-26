@@ -1,8 +1,8 @@
 <h1>Parent List</h1>
 
-<h2>Hi, <%=current_user.name.capitalize%>!</h2>
+<h2>Hi, <%=current_user.name.capitalize%>! Here are a list of parents:</h2>
 <%@parents.each do |p|%>
-  <p><%=p.name%></p>
+  <p><%=p.name.capitalize%></p>
 <%end%>
 
-<%= link_to "Log out", logout_path, method: :delete %>
+<%= link_to "Go Back", parent_path(current_user)%>

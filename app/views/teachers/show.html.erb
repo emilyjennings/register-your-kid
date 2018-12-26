@@ -1,2 +1,10 @@
-<h1>Teacher#new</h1>
-<p>Find me in app/views/teacher/new.html.erb</p>
+<h1><%=@teacher.name%></h1>
+<h3>Bio:</h3>
+<p><%=@teacher.bio%></p>
+<h3>Courses Taught:</h3>
+<%@teacher.courses.each do |c|%>
+  <p><%=link_to "#{c.title}", course_path(c)%></p>
+<%end%>
+
+<%= link_to "Go Back", parent_path(current_user)%>
+<p><%= link_to "Log Out", logout_path, method: :delete %></p>

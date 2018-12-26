@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get   '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  
+
   resources :parents
   #need a list of courses and show pages for the casual viewer
   resources :courses, only: [:index, :show]
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :kids, only: [:index, :show, :update, :create, :edit, :new]
   end
 
-  resources :kids
+  # resources :kids
 
 
 

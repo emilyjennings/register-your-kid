@@ -1,1 +1,6 @@
-<h1>Put the kid's individual page here</h1>
+<h1><%=@kid.name%></h1>
+<h3>Age: <%=@kid.name%></h3>
+<h3>Course: <%=@kid.course.title%></h3>
+<h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
+
+<%= link_to "Go Back", parent_path(current_user)%>

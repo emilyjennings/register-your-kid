@@ -1,7 +1,7 @@
 <h1>Kids in the School:</h1>
 <% @kids.each do |k|%>
   <% if k.name.present? %>
-    <p><%=k.name%>, age: <%=k.age%>, parent: <%=k.parent.name%></p>
+    <p><%=k.name.capitalize%>, age: <%=k.age%>, parent: <%=k.parent.name.capitalize%></p>
   <%end%>
 <%end%>
 
