@@ -1,7 +1,7 @@
 <h3>Sign up <%=@kid.name%> for a course:</h3>
 
 
-<%=form_for :kids, url: '/parents/:parent_id/kids/:id', method: :patch do |f|%>
+<%=form_for :kid, parent_kid_path(@kid), method: :patch do |f|%>
   <%= f.collection_select :course_id, Course.all, :id, :title%>
 
   <%= f.submit %>

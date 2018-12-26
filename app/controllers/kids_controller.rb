@@ -11,17 +11,15 @@ class KidsController < ApplicationController
   end
 
   def edit
-    #I need to figure out who the parent is and the child is (in a hash?)
     @parent = Parent.find_by(id: session[:id])
-    @kid = Kid.find(kid_path.last)
-
-    # @kids = @parent.kids
+    @kid = Kid.find(params[:id])
     @courses = Course.all
   end
 
   def update
+    #how to i put which kid this is for in the params?
+    #binding.pry
     @kid = Kid.find(params[:id])
-    #need to make sue the course id is the right params
     @kid.update(course_id: params[:kids][:course_id])
     redirect_to parent_path(session[:id])
   end
