@@ -5,8 +5,5 @@
   <%= link_to "Profile", parent_path(session[:id]) %>
   <p><%= link_to "Log out", logout_path, method: :delete %></p>
 <%else%>
-  <h2>Hi! Go ahead and log in or sign up.</h2>
-
-  <p><%= link_to 'Sign Up', signup_path%></p>
-  <p><%= link_to 'Log In', login_path%></p>
+  <h2>Go ahead and <%= link_to 'Sign Up', signup_path%> or <%= link_to 'Log In', login_path%></h2>
 <%end%>
