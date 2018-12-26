@@ -11,7 +11,7 @@
       <p><%=k.name.capitalize%>, age: <%=k.age%></p>
       <p><%= link_to "Edit Kid", edit_parent_kid_path(@parent, k) %></p>
       <h3>Sign up <%=k.name%> for a course:</h3>
-      <%=form_for k, url: '/parents/:parent_id/kids/:id', method: :patch do |f|%>
+      <%=form_for k, url: parent_kid_path(@parent, k), method: :patch do |f|%>
         <%= f.collection_select :course_id, Course.all, :id, :title%>
 
         <%= f.submit %>
