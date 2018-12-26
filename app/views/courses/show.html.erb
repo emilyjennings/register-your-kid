@@ -3,10 +3,16 @@
 <p><%=@course.description%></p>
 <h3>Age Group: <%=@course.age_group%></h3>
 
-<h2>Students signed up:</h2>
-<%@course.kids.each do |k|%>
-  <p><%=k.name.capitalize%>, age: <%=k.age%></p>
-<%end%>
+<%if logged_in?%>
+  <h2>Students signed up:</h2>
+  <%@course.kids.each do |k|%>
+    <p><%=k.name.capitalize%>, age: <%=k.age%></p>
+  <%end%>
 
-<%= link_to "Go Back", courses_path%>
-<p><%= link_to "Log Out", logout_path, method: :delete %></p>
+  <p><%= link_to "Go Back", courses_path%></p>
+  <p><%= link_to "Your Profile", parent_path(current_user)%></p>
+  <p><%= link_to "Log Out", logout_path, method: :delete %></p>
+
+<%else%>
+  <%=link_to "Log In to See More and Sign Up", login_path%>
+<%end%>

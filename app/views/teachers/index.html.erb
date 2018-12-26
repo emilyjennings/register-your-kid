@@ -1,6 +1,6 @@
 <h1>Teacher List</h1>
 <%@teachers.each do |t|%>
-  <%=link_to "#{t.name}", teacher_path(t)%>
+  <h3><%=link_to "#{t.name}", teacher_path(t)%></h3>
 <%end%>
 
 <%= link_to "Go Back", parent_path(current_user)%>

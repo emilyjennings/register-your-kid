@@ -1,15 +1,12 @@
+<%= render 'style' %>
+
 <%if logged_in?%>
-  <h1>Welcome, <%=current_user.name.capitalize%>!</h1>
+  <h2>Welcome, <%=current_user.name.capitalize%>!</h2>
   <%= link_to "Profile", parent_path(session[:id]) %>
+  <p><%= link_to "Log out", logout_path, method: :delete %></p>
 <%else%>
-  <h1>Hi! Go ahead and log in or sign up.</h1>
+  <h2>Hi! Go ahead and log in or sign up.</h2>
+
+  <p><%= link_to 'Sign Up', signup_path%></p>
+  <p><%= link_to 'Log In', login_path%></p>
 <%end%>
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-
-<%= link_to 'Sign Up', signup_path%>
-<%= link_to 'Log In', login_path%>
-
-
-<%= link_to "Log out", logout_path, method: :delete %>

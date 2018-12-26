@@ -3,7 +3,7 @@
 <p><%=@teacher.bio%></p>
 <h3>Courses Taught:</h3>
 <%@teacher.courses.each do |c|%>
-  <p><%=link_to "#{c.title}", course_path(c)%></p>
+  <h3><%=link_to "#{c.title}", course_path(c)%></h3>
 <%end%>
 
 <%= link_to "Go Back", parent_path(current_user)%>

@@ -1,9 +1,12 @@
 <h1>Kids in the School:</h1>
-<% @kids.each do |k|%>
-  <% if k.name.present? %>
-    <p><%=k.name.capitalize%>, age: <%=k.age%>, parent: <%=k.parent.name.capitalize%></p>
+
+<%if logged_in?%>
+  <% @kids.each do |k|%>
+    <% if k.name.present? %>
+      <p><%=k.name.capitalize%>, age: <%=k.age%>, parent: <%=k.parent.name.capitalize%></p>
+    <%end%>
   <%end%>
+  <%= link_to "Go Back", parent_path(current_user)%>
+<%else%>
+  <p>You need to be logged in to see this.</p>
 <%end%>
-
-
-<%= link_to "Go Back", parent_path(current_user)%>

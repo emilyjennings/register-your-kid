@@ -1,6 +1,13 @@
-<h1><%=@kid.name%></h1>
-<h3>Age: <%=@kid.name%></h3>
-<h3>Course: <%=@kid.course.title%></h3>
-<h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
+<%if logged_in?%>
 
-<%= link_to "Go Back", parent_path(current_user)%>
+  <h1><%=@kid.name.capitalize%></h1>
+  <h3>Age: <%=@kid.age%></h3>
+  <%if @kid.course.present?%>
+    <h3>Course: <%=@kid.course.title%></h3>
+    <h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
+  <%end%>
+  <%= link_to "Go Back", parent_path(current_user)%>
+
+<%else%>
+  <p>You need to be logged in to see this.</p>
+<%end%>

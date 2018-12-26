@@ -7,6 +7,12 @@
   <p><%=c.description%></p>
 <%end%>
 
+<%if logged_in?%>
 
-<%= link_to "Go Back", parent_path(current_user)%>
+<p><%= link_to "Go Back", parent_path(current_user)%></p>
 <p><%= link_to "Log Out", logout_path, method: :delete %></p>
+
+
+<%else%>
+  <%=link_to "Log In to See More and Sign Up", login_path%>
+<%end%>
