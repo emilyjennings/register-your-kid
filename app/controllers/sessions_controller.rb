@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   #create a session by logging in, find the user (parent) then persist them
   def create
     parent = Parent.find_by(name: params[:session][:name])
-    if parent #&& parent.authenticate(params[:session][:password_digest])
+    if parent #&& parent.authenticate(params[:password_digest])
       log_in(parent)
       redirect_to parent_path(session[:id])
     else

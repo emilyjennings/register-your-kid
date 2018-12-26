@@ -9,7 +9,7 @@
 
 <%if logged_in?%>
 
-<p><%= link_to "Go Back", parent_path(current_user)%></p>
+<%=render partial: 'parents/goback'%>
 <p><%= link_to "Log Out", logout_path, method: :delete %></p>
 
 

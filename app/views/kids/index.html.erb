@@ -6,7 +6,7 @@
       <p><%=k.name.capitalize%>, age: <%=k.age%>, parent: <%=k.parent.name.capitalize%></p>
     <%end%>
   <%end%>
-  <%= link_to "Go Back", parent_path(current_user)%>
+  <%=render partial: 'parents/goback'%>
 <%else%>
   <p>You need to be logged in to see this.</p>
 <%end%>

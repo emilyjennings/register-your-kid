@@ -6,7 +6,7 @@
     <h3>Course: <%=@kid.course.title%></h3>
     <h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
   <%end%>
-  <%= link_to "Go Back", parent_path(current_user)%>
+  <%=render partial: 'parents/goback'%>
 
 <%else%>
   <p>You need to be logged in to see this.</p>

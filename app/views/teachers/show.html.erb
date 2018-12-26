@@ -6,5 +6,5 @@
   <h3><%=link_to "#{c.title}", course_path(c)%></h3>
 <%end%>
 
-<%= link_to "Go Back", parent_path(current_user)%>
-<p><%= link_to "Log Out", logout_path, method: :delete %></p>
+<%=render partial: 'sessions/logout'%>
+<%=render partial: 'parents/goback'%>

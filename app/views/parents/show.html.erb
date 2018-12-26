@@ -10,18 +10,17 @@
       <h3>Sign <%=k.name.capitalize%> up for a course:</h3>
       <%=form_for k, url: parent_kid_path(@parent, k), method: :patch do |f|%>
         <%= f.collection_select :course_id, Course.all, :id, :title%>
-
         <%= f.submit "Submit" %>
       <%end%>
     <%end%>
     <% if k.course_id.present?%>
       <p><%=k.name.capitalize%>'s Course: <%=Course.find(k.course_id).title%>, <%=Course.find(k.course_id).start_time%></p>
     <%end%>
-    --------------------------------
+    -------------------------
 
   <%end%>
 
-  <p><%= link_to "View All Kids", parent_kids_path(@parent) %></p>
-  <p><%= link_to "View All Parents", parents_path %></p>
-  <p><%= link_to "View All Teachers", teachers_path %></p>
-  <p><%= link_to "Log Out", logout_path, method: :delete %></p>
+<p><%= link_to "View All Kids", parent_kids_path(@parent) %></p>
+<p><%= link_to "View All Parents", parents_path %></p>
+<p><%= link_to "View All Teachers", teachers_path %></p>
+<%=render partial: 'sessions/logout'%>
