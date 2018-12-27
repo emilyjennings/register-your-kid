@@ -2,8 +2,8 @@
 
 <%if logged_in?%>
   <% @kids.each do |k|%>
-    <% if k.name.present? %>
-      <p><%=k.name.capitalize%>, age: <%=k.age%>, parent: <%=k.parent.name.capitalize%></p>
+    <% if exists?(k) %>
+      <p><%=capitalize(k)%>, age: <%=k.age%>, parent: <%=capitalize(k.parent)%></p>
     <%end%>
   <%end%>
   <%=render partial: 'parents/goback'%>

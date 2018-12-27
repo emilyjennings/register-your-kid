@@ -1,20 +1,23 @@
 class ApplicationController < ActionController::Base
-  # helper_method :current_user, :logged_in?, :log_out
+  helper_method :registered?, :exists?, :capitalize
   include SessionsHelper
-  
-  def current_user
-    session[:name] || nil
+
+
+  # def current_user
+  #   session[:name] || nil
+  # end
+
+  def exists?(k)
+    k.name.present?
   end
 
-  # def logged_in?
-  #   current_user != nil
-  # end
+  def registered?(kid)
+    kid.course.present?
+  end
 
-
-  # def log_out
-  #   session.delete(:parent_name)
-  #   current_user = nil
-  # end
+  def capitalize(person)
+    person.name.capitalize
+  end
 
 
 end

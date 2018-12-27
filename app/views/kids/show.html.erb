@@ -2,7 +2,7 @@
 
   <h1><%=@kid.name.capitalize%></h1>
   <h3>Age: <%=@kid.age%></h3>
-  <%if @kid.course.present?%>
+  <%if registered?(@kid)%>
     <h3>Course: <%=@kid.course.title%></h3>
     <h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
   <%end%>

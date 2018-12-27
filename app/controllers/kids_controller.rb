@@ -6,6 +6,9 @@ class KidsController < ApplicationController
     @kids = Kid.all
   end
 
+  def sorted_names
+  end
+
   def show
     @kid = Kid.find(params[:id])
   end
