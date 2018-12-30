@@ -2,7 +2,7 @@
 
 This is a tool for an education center to use for parents to sign their kids up for art classes. Specifically, I made it with hopes that the Sitar Arts Center in my neighborhood of Adams Morgan in DC, a non-profit center for art classes for kids and families of all economic backgrounds, would be able to use it in real life because currently they only have paper sign-up, but the programs department tells me that most families don't have printers and would do well to be able to sign up online. I'd also feel good knowing I saved some trees.
 
-##How this app will work for a user
+## How this app will work for a user
 
 The user (parent) goes to the root path and is prompted to log in or sign up. They should add some kids to later sign them up for classes.
 
@@ -10,7 +10,7 @@ They are given a list of their kids and a dropdown menu to pick a class for each
 
 They can view their profile page at any time that gives kid and course details.
 
-##My Workflow on this:
+## My Workflow on this:
 
 12.17.18
 Notes while setting this up so far -
@@ -56,12 +56,12 @@ alternate: there's just one form in kids to update the kid, where courses are sh
 * Parent logs in, is directed to their profile page, has a chance to create a kid, then add classes, then log out
 
 
-##Ruby version
+## Ruby version
 
 2.3.3
 
 
-##Deployment instructions
+## Deployment instructions
 
 How to run this on your machine:
 * clone the repo to your machine
