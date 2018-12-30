@@ -1,0 +1,28 @@
+body {
+  color: #874f6a;
+  background-color: #c6afba;
+  border: 4px solid #564d52;
+  border-radius: 7px;
+  width: 60%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+a {
+  color: #513944;
+}
+
+a:visited {
+  color: #473f43;
+}
+
+a:hover {
+  color: #f9439e;
+}
+
+#border {
+  margin: 20px;
+  border: 3px solid #f9d6eb;
+  border-radius: 10px;
+  background-color: #f9d6eb;
+}

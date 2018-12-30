@@ -1,0 +1,17 @@
+<h1>Add some kids</h1>
+<%= form_for(@kid) do |f| %>
+
+  <h3>Your kids:</h3>
+    <%= f.label :kid_number %><br>
+    <%= f.text_field :kid_number %>
+    <br>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+
+
+
+  <%=f.submit 'Submit' %>
+<%end%>
