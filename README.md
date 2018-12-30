@@ -2,6 +2,8 @@
 
 This is a tool for an education center to use for parents to sign their kids up for art classes. Specifically, I made it with hopes that the Sitar Arts Center in my neighborhood of Adams Morgan in DC, a non-profit center for art classes for kids and families of all economic backgrounds, would be able to use it in real life because currently they only have paper sign-up, but the programs department tells me that most families don't have printers and would do well to be able to sign up online. I'd also feel good knowing I saved some trees.
 
+##My Workflow on this:
+
 12.17.18
 Notes while setting this up so far -
 I need models for classes, kids, parents, and teachers:
@@ -57,22 +59,23 @@ Make a logged_in? method to know if a user is logged in before showing something
 Parent logs in, is directed to their profile page, has a chance to create a kid, then add classes, then log out
 
 
-Things you may want to cover:
+##Ruby version
 
-* Ruby version
+2.3.3
 
-* System dependencies
 
-* Configuration
+##Deployment instructions
 
-* Database creation
+How to run this on your machine:
+* clone the repo to your machine
+* cd into the directory
+* run rails s to start the server
+* navigate your browser to http://localhost:3000
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+Bug reports and pull requests are welcome on GitHub at https://github.com/emilyjennings/philosophy-thought-experiments-Sinatra-project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
