@@ -11,14 +11,15 @@ class SessionsController < ApplicationController
   def create
     if auth_hash = request.env["omniauth.auth"]
       #they logged in via oauth
-      oauth_email = request.env["omniauth.auth"]["email"]
-      if parent = Parent.find_by(name: oauth_email)
+      oauth_nickname = request.env["omniauth.auth"]["info"]["nickname"]
+
+      if parent = Parent.find_by(name: oauth_nickname)
         log_in(parent)
         redirect_to parent_path(session[:id])
         #just log them in because I have seen then before, omniauth is checking they are who they say they are
       else
         #make a new user
-        parent = Parent.new(name: oauth_email)
+        parent = Parent.new(name: oauth_nickname, password: request.env["omniauth.auth"]["credentials"]["token"])
         if parent.save
           log_in(parent)
           redirect_to parent_path(session[:id])

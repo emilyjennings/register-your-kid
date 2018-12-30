@@ -2,8 +2,8 @@
 <p><%= link_to "List of all courses", parent_courses_path(@parent) %></p>
 <h2>You can sign each kid up for one course only.</h2>
 
-  <h2>Your kids:</h2>
   <%@kids.each do |k|%>
+
     <% if exists?(k) %>
       <p><%=capitalize(k)%>, age: <%=k.age%></p>
       <p><%= link_to "#{k.name.capitalize}'s' Profile", parent_kid_path(@parent, k) %></p>
@@ -18,6 +18,10 @@
     <%end%>
     -------------------------
 
+  <%end%>
+
+  <%if @parent.kids.empty?%>
+    <h2><%=link_to "Add your kids", new_parent_kid_path(@parent)%></h2>
   <%end%>
 
 <p><%= link_to "View All Kids", parent_kids_path(@parent) %></p>

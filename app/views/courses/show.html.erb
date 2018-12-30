@@ -1,6 +1,7 @@
 <h1><%=@course.title%></h1>
 <h2><%=@course.start_time%></h2>
 <p><%=@course.description%></p>
+<h3>Teacher: <%=link_to "#{@course.teacher.name}", teacher_path(@course.teacher)%></h3>
 <h3>Age Group: <%=@course.age_group%></h3>
 
 <%if logged_in?%>

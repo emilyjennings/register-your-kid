@@ -25,10 +25,15 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.create(parent_params)
     #the parent gives a name and is signed up, otherwise directed back to the welcome page. If they successully sign up, they are directed to login
-    if @parent.save
+    if !@parent.name.empty? && !@parent.kids[0].name.empty?
+      @parent.save
       redirect_to login_path
+      flash[:notice] = "You Signed Up. Now Log In!"
+    elsif !@parent.name.empty? && @parent.kids[0].name.empty?
+      redirect_to signup_path
+      flash[:notice] = "You have to create at least one kid, try again"
     else
-      render :new
+      redirect_to signup_path
       flash[:notice] = @parent.errors.full_messages.to_sentence
     end
   end
@@ -36,6 +41,7 @@ class ParentsController < ApplicationController
   def show
     @parent = Parent.find_by(id: session[:id])
     @kids = @parent.kids
+
   end
 
   private

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
 
   resources :parents
+  resources :kids
   #need a list of courses and show pages for the casual viewer
   resources :courses, only: [:index, :show]
   #list of teachers and their profiles for casual viewer
