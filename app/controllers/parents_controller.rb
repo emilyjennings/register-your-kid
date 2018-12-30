@@ -23,14 +23,13 @@ class ParentsController < ApplicationController
   end
 
   def create
-    @parent = Parent.create!(parent_params)
-    # @parent.name.capitalize
+    @parent = Parent.create(parent_params)
     #the parent gives a name and is signed up, otherwise directed back to the welcome page. If they successully sign up, they are directed to login
     if @parent.save
       redirect_to login_path
     else
-      redirect_to root_path
-      flash[:notice] = "Enter a value of some kind"
+      render :new
+      flash[:notice] = @parent.errors.full_messages.to_sentence
     end
   end
 
