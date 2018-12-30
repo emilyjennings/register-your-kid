@@ -1,6 +1,14 @@
-# README
+# README for Register Your Kid
 
 This is a tool for an education center to use for parents to sign their kids up for art classes. Specifically, I made it with hopes that the Sitar Arts Center in my neighborhood of Adams Morgan in DC, a non-profit center for art classes for kids and families of all economic backgrounds, would be able to use it in real life because currently they only have paper sign-up, but the programs department tells me that most families don't have printers and would do well to be able to sign up online. I'd also feel good knowing I saved some trees.
+
+##How this app will work for a user
+
+The user (parent) goes to the root path and is prompted to log in or sign up. They should add some kids to later sign them up for classes.
+
+They are given a list of their kids and a dropdown menu to pick a class for each individual kid. They can also see lists of courses, other kids and parents in the school, and teachers with bios.
+
+They can view their profile page at any time that gives kid and course details.
 
 ##My Workflow on this:
 
@@ -36,27 +44,16 @@ alternate: there's just one form in kids to update the kid, where courses are sh
 * Display the teachers that the parents have on show page as well, through the classes, also in /parent/id/teacher/show with a profile about the teacher
 * make it so parents can log in and go to /parents/id/courses and see an upcoming schedule
 
-How this app will work for a user:
-
-The user (parent) goes to '/welcome' and is prompted to log in. (They might be able to see a list of classes without logging in) they're taken to '/users'
-
-The user signs up or logs in 'users/1'. They are given an index of all class choices and their times, age groups '/users/1/classes'.
-
-The user can click a link that takes them to the show page for the class. '/classes/1' and then a link from there to sign up for the class '/users/1/classes/2' - the form here will allow them to enter multiple kids' names
-
-They can view their profile page that contains classes and the teachers '/users/1/classes', the teachers have links to their pages with their classes that they teach '/teachers/1'
 
 12.18.18 notes after creating migrations and models and controllers:
 
-make resource routes for the landing page '/welcome' - this will be a view in parent, who is the user.
-
-make resource routes for the form to sign up for a class, the parent signs in and then sees the course index and goes to the page of the course and fills in the form. Need nested resources because the session assumes the parent already - can populate the kids they have in the form?
+* make resource routes for the form to sign up for a class, the parent signs in and then sees the course index and goes to the page of the course and fills in the form. Need nested resources because the session assumes the parent already - can populate the kids they have in the form?
 
 12.21.18
 
-Make a logged_in? method to know if a user is logged in before showing something
+* Make a logged_in? method to know if a user is logged in before showing something
 
-Parent logs in, is directed to their profile page, has a chance to create a kid, then add classes, then log out
+* Parent logs in, is directed to their profile page, has a chance to create a kid, then add classes, then log out
 
 
 ##Ruby version
