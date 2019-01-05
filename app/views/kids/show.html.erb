@@ -1,10 +1,15 @@
 <%if logged_in?%>
 
   <h1><%=@kid.name.capitalize%></h1>
-  <h3>Age: <%=@kid.age%></h3>
+  <%if @kid.age != 0%>
+      <h3>Age: <%=@kid.age%></h3>
+  <%else%>
+      <h3>Age: <%="#{@kid.name} is an infant" if Kid.infant%></h3>
+  <%end%>
   <%if registered?(@kid)%>
     <h3>Course: <%=@kid.course.title%></h3>
     <h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
+    <p></p>
   <%end%>
   <%=render partial: 'parents/goback'%>
 

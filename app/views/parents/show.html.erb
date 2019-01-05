@@ -5,7 +5,12 @@
   <%@kids.each do |k|%>
 
     <% if exists?(k) %>
-      <p><%=capitalize(k)%>, age: <%=k.age%></p>
+      <p><%=capitalize(k)%></p>
+      <%if k.age != 0%>
+          <h3>Age: <%=k.age%></h3>
+      <%else%>
+          <h3>Age: <%="#{k.name} is an infant" if Kid.infant%></h3>
+      <%end%>
       <p><%= link_to "#{k.name.capitalize}'s' Profile", parent_kid_path(@parent, k) %></p>
       <h3>Sign <%=k.name.capitalize%> up for a course:</h3>
       <%=form_for k, url: parent_kid_path(@parent, k), method: :patch do |f|%>

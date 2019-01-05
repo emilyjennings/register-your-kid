@@ -2,8 +2,10 @@
 
 <%if logged_in?%>
   <% @kids.each do |k|%>
-    <% if exists?(k) %>
+    <% if exists?(k) && k.age != 0 %>
       <p><%=capitalize(k)%>, age: <%=k.age%>, parent: <%=capitalize(k.parent)%></p>
+    <% elsif k.age == 0 %>
+      <p><%=capitalize(k)%>, infant, parent: <%=capitalize(k.parent)%></p>
     <%end%>
   <%end%>
   <%=render partial: 'parents/goback'%>

@@ -7,7 +7,11 @@
 <%if logged_in?%>
   <h2>Students signed up:</h2>
   <%@course.kids.each do |k|%>
-    <p><%=k.name.capitalize%>, age: <%=k.age%></p>
+    <% if k.age != 0 %>
+      <p><%=k.name.capitalize%>, age: <%=k.age%></p>
+    <%else%>
+      <p><%=k.name.capitalize%>, age: less than 1 year</p>
+    <%end%>
   <%end%>
 
   <p><%= link_to "Go Back", courses_path%></p>
