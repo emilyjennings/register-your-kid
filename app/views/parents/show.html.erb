@@ -19,7 +19,7 @@
       <%end%>
     <%end%>
     <% if registered?(k)%>
-      <p><%=k.name.capitalize%>'s Course: <%=Course.find(k.course_id).title%>, <%=Course.find(k.course_id).start_time%></p>
+      <p><%=k.name.capitalize%>'s Course: <%=k.course.title%>, <%=k.course.start_time%></p>
     <%end%>
     -------------------------
 

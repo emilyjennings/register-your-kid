@@ -17,7 +17,9 @@
   <p><%= link_to "Go Back", courses_path%></p>
   <p><%= link_to "Your Profile", parent_path(current_user)%></p>
   <p><%= link_to "Log Out", logout_path, method: :delete %></p>
-
+  <%current_user.kids.each do |k| %>
+    <p><%= link_to "Sign #{k.name} up for this course", edit_course_kid_path(@course, k) %></p>
+  <%end%>
 <%else%>
   <%=link_to "Log In to See More and Sign Up", login_path%>
 <%end%>

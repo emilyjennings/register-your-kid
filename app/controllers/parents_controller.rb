@@ -25,8 +25,7 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.create(parent_params)
     #the parent gives a name and is signed up, otherwise directed back to the welcome page. If they successully sign up, they are directed to login
-    if !@parent.name.empty? && !@parent.kids[0].name.empty?
-      @parent.save
+    if !@parent.kids[0].name.empty? && @parent.save
       redirect_to login_path
       flash[:notice] = "You Signed Up. Now Log In!"
     elsif !@parent.name.empty? && @parent.kids[0].name.empty?
@@ -49,7 +48,7 @@ class ParentsController < ApplicationController
   def parent_params
     params.require(:parent).permit(
       :name,
-      :password_digest,
+      :password,
       kids_attributes: [
         :name,
         :age,

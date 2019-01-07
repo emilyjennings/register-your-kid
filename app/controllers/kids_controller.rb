@@ -24,11 +24,10 @@ class KidsController < ApplicationController
     redirect_to parent_path(@parent)
   end
 
-  # def edit
-  #   @parent = Parent.find_by(id: session[:id])
-  #   @kid = Kid.find(params[:id])
-  #   @courses = Course.all
-  # end
+  def edit
+    @kid = Kid.find(params[:id])
+    @course = Course.find(params[:course_id])
+  end
 
   def update
     @kid = Kid.find(params[:id])

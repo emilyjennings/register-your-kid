@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
     else
       parent = Parent.find_by(name: params[:session][:name])
 
-      if parent && parent == Parent.find_by(password_digest: params[:session][:password_digest])
+      if parent && parent.authenticate(params[:session][:password])
         log_in(parent)
         redirect_to parent_path(session[:id])
       else

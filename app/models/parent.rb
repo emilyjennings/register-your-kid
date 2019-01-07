@@ -4,5 +4,6 @@ class Parent < ApplicationRecord
   has_secure_password
   validates :name, :presence => true
   validates :name, :uniqueness => true
+  validates :password, :presence => true
   accepts_nested_attributes_for :kids
 end
