@@ -3,10 +3,8 @@ require 'pry'
 class KidsController < ApplicationController
 
   def index
-    @kids = Kid.all
-  end
-
-  def sorted_names
+    @parent = current_user
+    @kids = current_user.kids
   end
 
   def show
@@ -32,7 +30,7 @@ class KidsController < ApplicationController
   def update
     @kid = Kid.find(params[:id])
     @kid.update(course_id: params[:kid][:course_id])
-    redirect_to parent_path(session[:id])
+    redirect_to parent_kids_path(current_user)
   end
 
   def kid_params

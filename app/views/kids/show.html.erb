@@ -7,7 +7,8 @@
     <h3>Age: <%=@kid.age%></h3>
   <%end%>
   <%if registered?(@kid)%>
-    <h3>Course: <%=@kid.course.title%></h3>
+    <h3>Course: <%=link_to "#{@kid.course.title}", course_path(@kid.course)%></h3>
+    <h3>Time: <%=@kid.course.start_time%></h3>
     <h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
     <p></p>
 

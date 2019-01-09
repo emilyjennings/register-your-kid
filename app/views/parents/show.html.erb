@@ -1,35 +1,21 @@
 <h1>Welcome, <%=@parent.name.capitalize%>!</h1>
-<p><%= link_to "List of all courses", parent_courses_path(@parent) %></p>
-<h2>You can sign each kid up for one course only.</h2>
-
-  <%@kids.each do |k|%>
-
-    <% if exists?(k) %>
-      <p><%=capitalize(k)%></p>
-      <%if k.age != 0%>
-          <h3>Age: <%=k.age%></h3>
-      <%else%>
-          <h3>Age: <%="#{k.name} is an infant" if Kid.infant%></h3>
-      <%end%>
-      <p><%= link_to "#{k.name.capitalize}'s' Profile", parent_kid_path(@parent, k) %></p>
-      <h3>Sign <%=k.name.capitalize%> up for a course:</h3>
-      <%=form_for k, url: parent_kid_path(@parent, k), method: :patch do |f|%>
-        <%= f.collection_select :course_id, Course.all, :id, :title%>
-        <%= f.submit "Submit" %>
-      <%end%>
+<%if logged_in? && @parent.kids.empty?%>
+  <h2><%=link_to "Add your kids", new_parent_kid_path(@parent)%></h2>
+<%elsif !@parent.kids.empty?%>
+  <h2>Your Kids:</h2>
+  <% @kids.each do |k|%>
+    <% if exists?(k) && k.age != 0 %>
+      <p><%=capitalize(k)%>, age: <%=k.age%>, course: <%=capitalize(k.parent)%></p>
+    <% elsif k.age == 0 %>
+      <p><%=capitalize(k)%>, infant, parent: <%=capitalize(k.parent)%></p>
     <%end%>
-    <% if registered?(k)%>
-      <p><%=k.name.capitalize%>'s Course: <%=k.course.title%>, <%=k.course.start_time%></p>
-    <%end%>
-    -------------------------
-
   <%end%>
+<%else%>
+  <p>You need to be logged in to see this.</p>
+<%end%>
 
-  <%if @parent.kids.empty?%>
-    <h2><%=link_to "Add your kids", new_parent_kid_path(@parent)%></h2>
-  <%end%>
-
-<p><%= link_to "View All Kids", parent_kids_path(@parent) %></p>
+<p><%= link_to "Browse courses", parent_courses_path(@parent) %></p>
+<p><%= link_to "View Your Kids", parent_kids_path(@parent) %></p>
 <p><%= link_to "View All Parents", parents_path %></p>
 <p><%= link_to "View All Teachers", teachers_path %></p>
 <%=render partial: 'sessions/logout'%>
