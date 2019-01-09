@@ -15,7 +15,7 @@
 <%end%>
 
 <p><%= link_to "Browse courses", parent_courses_path(@parent) %></p>
-<p><%= link_to "View Your Kids", parent_kids_path(@parent, @parent.kids) %></p>
+<p><%= link_to "View Your Kids", parent_kids_path(@parent.id) %></p>
 <p><%= link_to "View All Parents", parents_path %></p>
 <p><%= link_to "View All Teachers", teachers_path %></p>
 <%=render partial: 'sessions/logout'%>
