@@ -8,7 +8,8 @@ class KidsController < ApplicationController
   end
 
   def show
-    @kid = Kid.find(params[:id])
+    @parent = Parent.find(params[:parent_id])
+    @kid = @parent.kids.find(params[:id])
   end
 
   def new
