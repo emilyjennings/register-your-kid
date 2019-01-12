@@ -3,8 +3,8 @@ require 'pry'
 class KidsController < ApplicationController
 
   def index
-    @parent = current_user
-    @kids = current_user.kids
+    @parent = Parent.find(params[:parent_id])
+    @kids = @parent.kids
   end
 
   def show
@@ -17,7 +17,7 @@ class KidsController < ApplicationController
 
   def create
     @kid = Kid.create(kid_params)
-    @parent = current_user
+    @parent = Parent.find(params[:parent_id])
     @parent.kids << @kid
     redirect_to parent_path(@parent)
   end

@@ -38,7 +38,8 @@ class ParentsController < ApplicationController
   end
 
   def show
-    @parent = current_user
+    @parent = Parent.find(params[:id])
+    
     @kids = @parent.kids
 
   end

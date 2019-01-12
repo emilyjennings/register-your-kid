@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/auth/:provider/callback', to: 'sessions#create'
 
-  resources :parents
-  resources :kids
+
+
   #need a list of courses and show pages for the casual viewer
   resources :courses, only: [:index, :show] do
     resources :kids, only: [:edit, :update]
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show]
   resources :parents do
     #when the parent logs in, they can go to their show page which lists their kids and then a further page that shows their courses they signed up for
-    resources :courses, only: [:index, :show]
     #a logged in parent can see all kids in the school by name
     resources :kids, only: [:index, :show, :update, :create, :edit, :new]
   end
