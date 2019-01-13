@@ -14,7 +14,7 @@
     <%end%>
   <%end%>
 
-  <p><%= link_to "Go Back", courses_path%></p>
+  <p><%= link_to "Go Back to list of courses", courses_path%></p>
   <p><%= link_to "Your Profile", parent_path(current_user)%></p>
   <p><%= link_to "Log Out", logout_path, method: :delete %></p>
   <%current_user.kids.each do |k| %>
