@@ -78,5 +78,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/emilyj
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Meeting Notes
-notes: make the index page for the kids under parents be an index of only that parents' kids, and if you chance the parents id in the route it changes the kids
+notes: make the index page for the kids under parents be an index of only that parents' kids, and if you change the parents id in the route it changes the kids
 make "protection" on the edit the kid route
