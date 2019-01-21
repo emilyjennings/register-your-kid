@@ -39,7 +39,7 @@ class ParentsController < ApplicationController
 
   def show
     @parent = Parent.find(params[:id])
-    
+    @courses = Course.all
     @kids = @parent.kids
 
   end

@@ -2,12 +2,14 @@
 <%if logged_in? && @parent.kids.empty?%>
   <h2><%=link_to "Add your kids", new_parent_kid_path(@parent)%></h2>
 <%elsif !@parent.kids.empty?%>
-  <h2>Your Kids:</h2>
-  <% @kids.each do |k|%>
-    <% if exists?(k) && k.age != 0 %>
-      <p><%=capitalize(k)%>, age: <%=k.age%>, course: <%=capitalize(k.parent)%></p>
-    <% elsif k.age == 0 %>
-      <p><%=capitalize(k)%>, infant, parent: <%=capitalize(k.parent)%></p>
+  <h2>Your Course Schedule</h2>
+  <% @courses.map do |c|%>
+    <% @kids.each do |k|%>
+      <div class="border">
+        <%if k.course == c%>
+          <h3><%=c.start_time%>, Course Title: <%=c.title%></h3>
+        <%end%>
+      </div>
     <%end%>
   <%end%>
 <%else%>
