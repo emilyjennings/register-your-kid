@@ -3,10 +3,10 @@
   <h2><%=link_to "Add your kids", new_parent_kid_path(@parent)%></h2>
 <%elsif !@parent.kids.empty?%>
   <h2>Your Course Schedule</h2>
-  <% @courses.map do |c|%>
+  <% @courses.each do |c|%>
     <% @kids.each do |k|%>
       <div class="border">
-        <%if k.course == c%>
+        <% if c.kids.include?(k)%>
           <h3><%=c.start_time%>, Course Title: <%=c.title%></h3>
         <%end%>
       </div>

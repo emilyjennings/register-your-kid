@@ -3,21 +3,21 @@
 <h2>You can sign each kid up for one course only.</h2>
 
 <%@kids.each do |k|%>
+  <div class="border">
+    <% if exists?(k) %>
+      <h2><%=capitalize(k)%></h2>
+      <%if k.age != 0%>
+          <h4>Age: <%=k.age%></h4>
+      <%else%>
+          <h4>Age: <%="#{k.name} is an infant" if Kid.infant%></h4>
+      <%end%>
+      <p><%= link_to "#{capitalize(k)}'s Profile", parent_kid_path(@parent, k) %></p>
 
-  <% if exists?(k) %>
-    <p><%=capitalize(k)%></p>
-    <%if k.age != 0%>
-        <h3>Age: <%=k.age%></h3>
-    <%else%>
-        <h3>Age: <%="#{k.name} is an infant" if Kid.infant%></h3>
     <%end%>
-    <p><%= link_to "#{k.name.capitalize}'s' Profile", parent_kid_path(@parent, k) %></p>
-
-  <%end%>
-  <% if registered?(k)%>
-    <p><%=k.name.capitalize%>'s Course: <%=k.course.title%>, <%=k.course.start_time%></p>
-  <%end%>
-  -------------------------
+    <% if registered?(k)%>
+      <h3>Registered for <%=k.course.title%>, <%=k.course.start_time%></h3>
+    <%end%>
+  </div>
 
 <%end%>
 

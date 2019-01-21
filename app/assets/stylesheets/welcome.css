@@ -33,3 +33,10 @@ a:hover {
   border-radius: 10px;
   background-color: #f9d6eb;
 }
+
+.courseborder {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f9d6eb;
+}
