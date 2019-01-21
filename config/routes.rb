@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/auth/github/callback', to: 'sessions#create'
+  post '/parents/:parent_id/kids/new' to: 'kids#create'
 
 
 

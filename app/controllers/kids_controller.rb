@@ -14,6 +14,7 @@ class KidsController < ApplicationController
 
   def new
     @kid = Kid.new
+    @parent = Parent.find(params[:parent_id])
   end
 
   def create

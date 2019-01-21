@@ -1,5 +1,5 @@
 <h1>Add some kids</h1>
-<%= form_for(@kid) do |f| %>
+<%= form_for @kid, url: new_parent_kid_path(@parent, @kid) do |f| %>
 
   <h3>Your kids:</h3>
     <%= f.label :kid_number %><br>
