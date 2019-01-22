@@ -1,15 +1,15 @@
 <h1>Welcome, <%=@parent.name.capitalize%>!</h1>
 <%if logged_in? && @parent.kids.empty?%>
   <h2><%=link_to "Add your kids", new_parent_kid_path(@parent)%></h2>
-<%elsif !@parent.kids.empty?%>
+<%elsif logged_in? && !@parent.kids.empty?%>
   <h2>Your Course Schedule</h2>
-  <% @courses.each do |c|%>
-    <% @kids.each do |k|%>
-      <div class="border">
-        <% if c.kids.include?(k)%>
-          <h3><%=c.start_time%>, Course Title: <%=c.title%></h3>
-        <%end%>
-      </div>
+  <%@courses.map do |c|%>
+    <%@kids.detect do |k|%>
+      <%if k.course == c%>
+        <div class="border">
+          <p><%=c.start_time%>, Course: <%=c.title%></p>
+        </div>
+      <%end%>
     <%end%>
   <%end%>
 <%else%>
