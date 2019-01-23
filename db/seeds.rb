@@ -19,6 +19,6 @@ Course.create!(title: "Arts Afterschool", start_time: "After school weekdays", a
 Course.create!(title: "Flamenco 4 Kids!™ (Bilingual)", start_time: "11AM Thursdays", age_group: "5-6", description: "At any age Flamenco is a lot more than just dance. But for young children it can be a unique outlet for self-expression. Flamenco 4 Kids™ carefully balances discipline with endless opportunities for fun and character development. In this series your little ones will learn the art of flamenco through games, imaginative play, repetition, and ear training. Rhythm and dance are cleverly intertwined as children accompany traditional music from Andalucía by moving their bodies from head to toe.", teacher_id: 1)
 Course.create!(title: "Wizardry: Not the Dark Arts (Bilingual)", start_time: "9AM Fridays", age_group: "all ages", description: "Students will learn to use their wands for art and social good through intention setting and proper spells.", teacher_id: 4)
 
-Parent.create!(name: "Eddard")
+Parent.create!(name: "Eddard", password: "password")
 
 Kid.create!(name: "Robb", age: 10, parent_id: 1, course_id: 4)

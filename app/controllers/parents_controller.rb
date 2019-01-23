@@ -17,9 +17,9 @@ class ParentsController < ApplicationController
   def new
     #a new parent login form is shown
     @parent = Parent.new
-    @parent.kids.build(kid_number: "1")
-    @parent.kids.build(kid_number: "2")
-    @parent.kids.build(kid_number: "3")
+    @parent.kids.build(name: "name of first kid")
+    @parent.kids.build(name: "name of second kid")
+    @parent.kids.build(name: "name of third kid")
   end
 
   def create
