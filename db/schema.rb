@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2018_12_24_230901) do
     t.integer "age"
     t.integer "parent_id"
     t.integer "course_id"
-    t.string "kid_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 2018_12_24_230901) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "bio"
   end
 
 end

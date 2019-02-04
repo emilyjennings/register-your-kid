@@ -22,7 +22,7 @@ class KidsController < ApplicationController
     @kid = Kid.create(kid_params)
     @parent = Parent.find(params[:parent_id])
     @parent.kids << @kid
-    redirect_to parent_path(@parent)
+    render json: @kid, status: 201
   end
 
   def edit

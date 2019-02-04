@@ -15,3 +15,23 @@
 
   <%=f.submit 'Submit' %>
 <%end%>
+
+<div id="kidResult">
+  <h2 id="kidName"></h2>
+  <p id="kidAge"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $('form').submit(function(event) {
+    event.preventDefault();
+    var values = $(this).serialize();
+    var posting = $.post('/parents/#{@parent.id}/kids', values);
+    posting.done(function(data) {
+      var kid = data;
+      $("#kidName").text(product["name"]);
+      $("#kidAge").text("Age:" + product["age"]);
+    });
+  });
+});
+</script>
