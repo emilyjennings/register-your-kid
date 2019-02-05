@@ -1,0 +1,62 @@
+<%= form_for @course do |f| %>
+
+  <h1>Your New Course:</h1>
+    <br>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :start_time %><br>
+    <%= f.text_field :start_time %>
+    <br>
+    <%= f.label :age_group %><br>
+    <%= f.text_field :age_group %>
+    <br>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+    <br>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name%>
+    <br>
+
+
+  <%=f.submit 'Submit', class: "Submit" %>
+<%end%>
+
+<div id="courseResult">
+  <h1 id="courseTitle"></h1>
+  <h3 id="courseTime"></h3>
+  <h3 id="courseAge"></h3>
+  <h3 id="courseDesc"></h3>
+  <h3 id="courseTeacher"></h3>
+</div>
+
+<%=render partial: 'parents/goback'%>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('form').submit(function(event) {
+      event.preventDefault();
+
+      var values = $(this).serialize();
+
+      var posting = $.post('/courses', values);
+
+      posting.done(function(data) {
+        $('#course_description').val("");
+        $('#course_title').val("");
+        $('#course_age_group').val("");
+        $('#course_start_time').val("");
+        // $(".Submit").prop('disabled', false);
+        var course = data;
+        $("#courseTitle").text(course["title"]);
+        $("#courseTime").text("Time: " + course["start_time"]);
+        $("#courseAge").text("Ages: " + course["age_group"]);
+        $("#courseDesc").text(course["description"]);
+        $("#courseTeacher").text("Teacher: " + course["teacher"]["name"]);
+      });
+        alert("course created!")
+
+    });
+    return false;
+  });
+
+</script>

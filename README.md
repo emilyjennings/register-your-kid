@@ -55,6 +55,9 @@ alternate: there's just one form in kids to update the kid, where courses are sh
 
 * Parent logs in, is directed to their profile page, has a chance to create a kid, then add classes, then log out
 
+2.5.19
+I added JavaScript functionality using AJAX and JSON to dynamically present form submissions on the pages - check out the new course page where a user can make a new course. There are other clickable DOM objects that allow the user to browse through things quickly.
+
 
 ## Ruby version
 
@@ -69,14 +72,11 @@ How to run this on your machine:
 * run rails s to start the server
 * navigate your browser to http://localhost:3000
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/emilyjennings/philosophy-thought-experiments-Sinatra-project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This is under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Meeting Notes
-notes: make the index page for the kids under parents be an index of only that parents' kids, and if you change the parents id in the route it changes the kids
-make "protection" on the edit the kid route
+## More I'd like to do here
+Create more dynamic AJAX-powered functionality, such as clicking through all the kids or courses to choose from using a "next" button on the show pages.
+I want to translate the JSON responses into JavaScript Model Objects using either ES6 class or constructor syntax.
+I'd like to create an admin login so someone may actually use this in an education center. Kids should be able to have more than one class as well.
