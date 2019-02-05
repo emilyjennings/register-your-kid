@@ -22,16 +22,17 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-$(function () {
-  $('form').submit(function(event) {
-    event.preventDefault();
-    var values = $(this).serialize();
-    var posting = $.post('/parents/#{@parent.id}/kids', values);
-    posting.done(function(data) {
-      var kid = data;
-      $("#kidName").text(kid["name"]);
-      $("#kidAge").text("Age:" + kid["age"]);
+  $(function () {
+    $('form').submit(function(event) {
+      event.preventDefault();
+      var values = $(this).serialize();
+      var posting = $.post('/kids', values);
+      posting.done(function(data) {
+        var kid = data;
+        debugger
+        $("#kidName").text(kid["name"]);
+        $("#kidAge").text("Age:" + kid["age"]);
+      });
     });
   });
-});
 </script>
