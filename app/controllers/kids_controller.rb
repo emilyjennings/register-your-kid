@@ -18,7 +18,6 @@ class KidsController < ApplicationController
   end
 
   def create
-
     @kid = Kid.create(kid_params)
     @parent = Parent.find(params[:parent_id])
     @parent.kids << @kid

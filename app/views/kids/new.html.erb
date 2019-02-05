@@ -29,8 +29,8 @@ $(function () {
     var posting = $.post('/parents/#{@parent.id}/kids', values);
     posting.done(function(data) {
       var kid = data;
-      $("#kidName").text(product["name"]);
-      $("#kidAge").text("Age:" + product["age"]);
+      $("#kidName").text(kid["name"]);
+      $("#kidAge").text("Age:" + kid["age"]);
     });
   });
 });
