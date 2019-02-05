@@ -4,9 +4,23 @@
     <h2><%=link_to c.title, course_path(c)%></h2>
     <h4><%=c.start_time%></h4>
     <h4>Age Group: <%=c.age_group%></h4>
-    <p><%=c.description%></p>
+    <div id="body-<%=c.id%>"><p><%=truncate c.description%></p></div>
+    <div id="desc-<%=c.id%>"><%= link_to 'See more', '', class: "read-more-#{c.id}" %></div>
+
+    <script>
+      $('.read-more-<%= c.id %>').on('click', function(e) {
+        e.preventDefault()
+        $('#body-<%=c.id%>').html('<%= escape_javascript c.description %>')
+        $('#desc-<%=c.id%>').hide()
+      })
+    </script>
+
   </div>
 <%end%>
+
+
+
+
 
 <%if logged_in?%>
 
