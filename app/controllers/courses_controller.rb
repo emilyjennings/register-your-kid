@@ -28,7 +28,8 @@ class CoursesController < ApplicationController
       :title,
       :start_time,
       :age_group,
-      :description
+      :description,
+      :teacher_id
       )
   end
 

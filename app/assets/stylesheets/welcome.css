@@ -49,3 +49,11 @@ a:hover {
   border: 3px solid #f9d6eb;
   border-radius: 10px;
 }
+
+#courseResult {
+  display: block;
+  width: auto;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
