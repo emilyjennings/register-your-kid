@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   #need a list of courses and show pages for the casual viewer
-  resources :courses, only: [:index, :show] do
+  resources :courses, only: [:index, :show, :create, :new] do
     resources :kids, only: [:edit, :update]
   end
   #list of teachers and their profiles for casual viewer
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     #a logged in parent can see all kids in the school by name
     resources :kids, only: [:index, :show, :update, :create, :edit, :new]
   end
+
 
   # resources :kids
 

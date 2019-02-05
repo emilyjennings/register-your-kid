@@ -18,8 +18,7 @@
       <h3>Registered for <%=k.course.title%>, <%=k.course.start_time%></h3>
       <div id="body-<%=k.course.id%>"><%=truncate k.course.description%></div>
       <div id="desc-<%=k.course.id%>"><%= link_to '...See more', '', class: "read-more-#{k.course.id}" %></div>
-      <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-      <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
       <script>
         $('.read-more-<%= k.course.id %>').on('click', function(e) {
           e.preventDefault()
@@ -27,6 +26,7 @@
           $('#desc-<%=k.course.id%>').hide()
         })
       </script>
+      
     <%end%>
   </div>
 

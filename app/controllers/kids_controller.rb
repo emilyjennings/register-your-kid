@@ -10,10 +10,10 @@ class KidsController < ApplicationController
   def show
     @parent = Parent.find(params[:parent_id])
     @kid = @parent.kids.find(params[:id])
-    respond_to do |format|
-      format.html { render :show }
-      format.json { render  json: @kid }
-    end
+    # respond_to do |format|
+    #   format.html { render :show }
+    #   format.json { render  json: @kid }
+    # end
   end
 
   def new
@@ -25,7 +25,8 @@ class KidsController < ApplicationController
     @kid = Kid.create(kid_params)
     @parent = Parent.find(params[:parent_id])
     @parent.kids << @kid
-    render json: @kid, status: 201
+    redirect_to parent_kids_path
+    # render json: @kid, status: 201
   end
 
   def edit
@@ -38,6 +39,8 @@ class KidsController < ApplicationController
     @kid.update(course_id: params[:kid][:course_id])
     redirect_to parent_kids_path(current_user)
   end
+
+  private
 
   def kid_params
     params.require(:kid).permit(

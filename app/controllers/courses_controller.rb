@@ -12,4 +12,24 @@ class CoursesController < ApplicationController
     end
   end
 
+  def new
+    @course = Course.new
+  end
+
+  def create
+    @course = Course.create!(course_params)
+    render json: @course, status: 201
+  end
+
+  private
+
+  def course_params
+    params.require(:course).permit(
+      :title,
+      :start_time,
+      :age_group,
+      :description
+      )
+  end
+
 end

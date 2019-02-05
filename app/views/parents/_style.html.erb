@@ -1,3 +1,19 @@
 <h1>Register Your Kid!</h1>
 <img src="http://myfrenchclasses.org/sites/myfrenchclasses.org/files/art_class.jpg" alt="" width="300">
-<h3>An app that lets you browse, select, and sign up your child for very educational and enriching art or music classes.</h3>
+<div class="button"><h3 id="about">What are we about?</h3></div>
+<div class="button"><h3 id="beliefs">What do we believe in?</h3></div>
+<div class="button"><h3 id="why">Why sign up?</h3></div>
+
+<script>
+  $('#about').click(function(){
+    $(this).text("An app that lets you browse, select, and sign up your child for very educational and enriching art or music classes. You can also become part of our community and create a class!")
+  });
+
+  $('#beliefs').click(function(){
+    $(this).text("We believe that all kids deserve the opportunity to explore their creative side to the max, and that with a little support and a little community, anything is possible.")
+  });
+
+  $('#why').click(function(){
+    $(this).text("We created this community so that families can share resources and talents with each other to further enrich the potential of all of our kids, since they are the next generation. We also did this because creativity is often overlooked as a skill that is necessary in all industries.")
+  });
+</script>

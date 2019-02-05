@@ -10,6 +10,8 @@
 
 <%if logged_in?%>
 
+<%=link_to 'Create a course!', new_course_path%>
+
 <%=render partial: 'parents/goback'%>
 <p><%= link_to "Log Out", logout_path, method: :delete %></p>
 

@@ -1,11 +1,13 @@
-<%= render 'style' %>
+
 
 <div id="border">
   <%if logged_in?%>
     <h2>Welcome, <%=current_user.name.capitalize%>!</h2>
-    <%= link_to "Profile", parent_path(session[:id]) %>
+    <p><%= link_to "Profile", parent_path(session[:id]) %></p>
     <p><%= link_to "Log out", logout_path, method: :delete %></p>
   <%else%>
     <h2>Go ahead and <%= link_to 'Sign Up', signup_path%> or <%= link_to 'Log In', login_path%></h2>
   <%end%>
 </div>
+
+<%= render 'style' %>
