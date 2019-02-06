@@ -57,3 +57,8 @@ a:hover {
   border-radius: 10px;
   padding: 10px;
 }
+
+.js-next {
+  border-radius: 10px;
+  font-size: 20px;
+}

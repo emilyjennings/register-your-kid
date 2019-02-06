@@ -1,27 +1,58 @@
-<h1><%=@course.title%></h1>
-<h2><%=@course.start_time%></h2>
-<p><%=@course.description%></p>
-<h3>Teacher: <%=link_to "#{@course.teacher.name}", teacher_path(@course.teacher)%></h3>
-<h3>Age Group: <%=@course.age_group%></h3>
+<h1 id="title"><%=@course.title%></h1>
+<div class="courseborder">
+  <h2 id="start_time"><%=@course.start_time%></h2>
+  <p id="description"><%=@course.description%></p>
+  <h3 id="teacher">Teacher: <%=link_to "#{@course.teacher.name}", teacher_path(@course.teacher)%></h3>
+  <h3 id="age_group">Age Group: <%=@course.age_group%></h3>
+</div>
+
 
 <%if logged_in?%>
-  <h2>Students signed up:</h2>
-  <%@course.kids.each do |k|%>
-    <% if k.age != 0 %>
-      <p><%=k.name.capitalize%>, age: <%=k.age%></p>
-    <%else%>
-      <p><%=k.name.capitalize%>, age: less than 1 year</p>
+  <div class="courseborder">
+    <h2>Students signed up:</h2>
+    <%@course.kids.each do |k|%>
+      <% if k.age != 0 %>
+        <p class="kids"><%=k.name.capitalize%>, age: <%=k.age%></p>
+      <%else%>
+        <p class="kids"><%=k.name.capitalize%>, age: less than 1 year</p>
+      <%end%>
     <%end%>
-  <%end%>
+  </div>
 
-  <p><%= link_to "Go Back to list of courses", courses_path%></p>
-  <p><%= link_to "Your Profile", parent_path(current_user)%></p>
-  <p><%= link_to "Log Out", logout_path, method: :delete %></p>
-  <%current_user.kids.each do |k| %>
-    <%if !k.name.empty?%>
-      <p><%= link_to "Sign #{k.name} up for this course", edit_course_kid_path(@course, k) %></p>
+    <p><%= link_to "Go Back to list of courses", courses_path%></p>
+    <p><%= link_to "Your Profile", parent_path(current_user)%></p>
+    <p><%= link_to "Log Out", logout_path, method: :delete %></p>
+    <%current_user.kids.each do |k| %>
+      <%if !k.name.empty?%>
+        <p><%= link_to "Sign #{k.name} up for this course", edit_course_kid_path(@course, k) %></p>
+      <%end%>
     <%end%>
-  <%end%>
+
 <%else%>
-  <%=link_to "Log In to See More and Sign Up", login_path%>
+  <div class="courseborder">
+    <%=link_to "Log In to See More and Sign Up", login_path%>
+  </div>
 <%end%>
+
+
+<div class="courseborder"><a href="#" class="js-next" data-id="<%=@course.id%>">See next course</a></div>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on("click", function(event) {
+    event.preventDefault()
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/courses/" + nextId + ".json", function(data) {
+      var values = data
+      $("#title").text(values["title"]);
+      $("#start_time").text(values["start_time"]);
+      $("#description").text(values["description"]);
+      $("#teacher").text(values["teacher"]);
+      $("#age_group").text(values["age_group"]);
+      $(".kids").text('');
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", data["id"]);
+    });
+  });
+});
+</script>

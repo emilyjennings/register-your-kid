@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @post}
+      format.json { render json: @course.to_json }
     end
   end
 
