@@ -30,6 +30,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'dotenv-rails'
 gem 'active_model_serializers'
+gem 'jquery-rails'
 
 
 # Use ActiveStorage variant
