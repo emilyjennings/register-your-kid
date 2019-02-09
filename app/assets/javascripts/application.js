@@ -14,5 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
-//= require jquery.flexslider-min
-//= require jquery_ujs
