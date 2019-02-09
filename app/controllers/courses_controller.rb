@@ -1,4 +1,4 @@
-require 'pry'
+
 class CoursesController < ApplicationController
   def index
     @courses = Course.all
