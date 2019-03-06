@@ -8,6 +8,7 @@ class ParentsController < ApplicationController
     render :welcome
   end
 
+  #users can see a list of parents in the school
   def index
     @parents = Parent.all
     @parent = current_user
@@ -15,7 +16,7 @@ class ParentsController < ApplicationController
   end
 
   def new
-    #a new parent login form is shown
+    #a new parent login form is shown, and they have the option to add up to three kids but they can add more later after login
     @parent = Parent.new
     @parent.kids.build(name: "name of first kid")
     @parent.kids.build(name: "name of second kid")

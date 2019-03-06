@@ -21,6 +21,7 @@ class KidsController < ApplicationController
     @parent = Parent.find(params[:parent_id])
   end
 
+  #creates a new kid from the form and associates them with their parent
   def create
     @kid = Kid.create(kid_params)
     @parent = Parent.find(params[:parent_id])

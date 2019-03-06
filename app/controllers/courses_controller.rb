@@ -16,6 +16,7 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
+  #I wanted users to be able to submit a course themselves - maybe later the admin can do that
   def create
     @course = Course.create!(course_params)
     render json: @course, status: 201
