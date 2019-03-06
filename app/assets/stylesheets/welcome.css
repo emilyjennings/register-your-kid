@@ -140,3 +140,17 @@ a:hover {
   z-index: 100;
   opacity: 0;
 }
+
+@media all and (max-width: 500px) {
+  #hamburger {
+    font-size: 30px;
+  }
+
+  .nav {
+    font-size: 30px;
+  }
+
+  img {
+    width: 200px;
+  }
+}
