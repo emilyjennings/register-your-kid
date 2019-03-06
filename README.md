@@ -58,6 +58,9 @@ alternate: there's just one form in kids to update the kid, where courses are sh
 2.5.19
 I added JavaScript functionality using AJAX and JSON to dynamically present form submissions on the pages - check out the new course page where a user can make a new course. There are other clickable DOM objects that allow the user to browse through things quickly.
 
+3.6.19
+I added some comments, changed the styling, and added more seeds. The center I created this project for is looking at it to decide if they could use something like this.
+
 
 ## Ruby version
 
