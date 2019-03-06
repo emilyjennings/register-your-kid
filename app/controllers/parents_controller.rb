@@ -1,5 +1,3 @@
-require 'pry'
-
 class ParentsController < ApplicationController
   # before_action :require_login, only: [:show]
 
