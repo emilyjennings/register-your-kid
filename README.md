@@ -61,6 +61,10 @@ I added JavaScript functionality using AJAX and JSON to dynamically present form
 3.6.19
 I added some comments, changed the styling, and added more seeds. The center I created this project for is looking at it to decide if they could use something like this.
 
+I messed around with the authentication and validations here. It was hard because the kid when first created at sign up can end up having no age, and that's not ideal. I needed to figure out how to have the required age field. I just made the built in attributes in the form (the default values) set to "" and I used activerecord validations to make sure the correct fields were entered.
+
+I need to work on making the way I identify the user - right now it's one of  current_user, session[:id] and parent.id - it needs to be one consistent thing across all views.
+
 
 ## Ruby version
 

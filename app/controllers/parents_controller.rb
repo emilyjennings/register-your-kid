@@ -1,4 +1,4 @@
-
+require 'pry'
 
 class ParentsController < ApplicationController
   # before_action :require_login, only: [:show]
@@ -16,24 +16,20 @@ class ParentsController < ApplicationController
   end
 
   def new
-    #a new parent login form is shown, and they have the option to add up to three kids but they can add more later after login
+    #a new parent signup form is shown, and they have the option to add up to three kids but they can add more later after login
     @parent = Parent.new
-    @parent.kids.build(name: "name of first kid")
-    @parent.kids.build(name: "name of second kid")
-    @parent.kids.build(name: "name of third kid")
+    @parent.kids.build(name: "")
   end
 
   def create
     @parent = Parent.create(parent_params)
     #the parent gives a name and is signed up, otherwise directed back to the welcome page. If they successully sign up, they are directed to login
-    if !@parent.kids[0].name.empty? && @parent.save
+    #this was hard because the kid's age is 0 if the user doesn't enter it. The age here is a string not an integer.
+    #I changed the validations to require a kid to have a name ands an age and the built in attributes in the form I took out
+    if @parent.save
       redirect_to login_path
       flash[:notice] = "You Signed Up. Now Log In!"
-    elsif !@parent.name.empty? && @parent.kids[0].name.empty?
-      redirect_to signup_path
-      flash[:notice] = "Please try again, make sure you entered your name and one kid"
     else
-      !@parent.save
       redirect_to signup_path
       flash[:notice] = @parent.errors.full_messages.to_sentence
     end
@@ -53,6 +49,7 @@ class ParentsController < ApplicationController
     params.require(:parent).permit(
       :name,
       :password,
+      #the kids get associated with the parent as a nested attribute
       kids_attributes: [
         :name,
         :age,

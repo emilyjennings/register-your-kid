@@ -1,8 +1,8 @@
 body {
-  color: #f2468b;
+  color: #03c1c1;
   font-family: Georgia;
-  background-color: #f9edf2;
-  border: 4px solid #f450cb;
+  background-color: #f7f9f8;
+  border: 4px solid #fc4ed3;
   border-radius: 7px;
   width: 60%;
   margin: 20px auto;
@@ -11,13 +11,13 @@ body {
 }
 
 a {
-  color: #f450cb;
+  color: #fc4ed3;
   margin-top: 5px;
   font-weight: bold;
 }
 
 a:visited {
-  color: #ef109a;
+  color: #10cece;
 }
 
 a:hover {
@@ -26,16 +26,15 @@ a:hover {
 
 #border {
   margin: 20px;
-  border: 3px solid #f7d7e5;
+  border: 3px solid #def7f7;
   border-radius: 10px;
-  background-color: #f7d7e5;
-
+  background-color: #def7f7;
 }
 
 .border {
   margin: 20px;
   border-radius: 10px;
-  background-color: #f7d7e5;
+  background-color: #def7f7;
   font-size: 22px;
   padding: 20px;
   padding-bottom: 30px;
@@ -46,15 +45,16 @@ a:hover {
   padding: 20px;
   padding-bottom: 30px;
   border-radius: 10px;
-  background-color: #f7d7e5;
+  background-color: #f9e8f6;
 }
 
 .button {
   display: block;
   width: auto;
   margin: 20px;
-  border: 3px solid #f450cb;
+  border: 3px solid #f780db;
   border-radius: 10px;
+  background-color: #def7f7
 }
 
 #courseResult {
@@ -68,4 +68,8 @@ a:hover {
 .js-next {
   border-radius: 10px;
   font-size: 20px;
+}
+
+.notice {
+  color: #0787f7;
 }

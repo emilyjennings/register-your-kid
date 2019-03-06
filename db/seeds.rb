@@ -21,6 +21,7 @@ Course.create!(title: "Flamenco 4 Kids!™ (Bilingual)", start_time: "11AM Thurs
 Course.create!(title: "Digital Arts", start_time: "4PM Wednesdays", age_group: "12-17", description: "Students have the opportunity to create their own websites or lay down a beat for a song they’ve written in a brand new, state-of-the-art computer lab at Sitar Arts Center. In addition to classes like Music Production and Web Design, students can learn animation, video, and graphic design using skills from visual art and music to discover the world of multimedia.", teacher_id: 4)
 Course.create!(title: "Wizardry: Not the Dark Arts (Bilingual)", start_time: "9AM Fridays", age_group: "all ages", description: "Students will learn to use their wands for art and social good through intention setting and proper spells.", teacher_id: 4)
 Course.create!(title: "Sing and Sign", start_time: "4PM Tuesdays", age_group: "2-3", description: "Sing and Sign teams music and ASL signs with classic nursery rhymes, traditional American children’s repertoire, and seasonal songs reflecting the natural world. Books and puppets provide visuals to enhance the children’s understanding of the signs and enjoyment of the songs.", teacher_id: 5)
+Course.create!(title: "Painting with Paint", start_time: "2PM Tuesdays", age_group: "5-12", description: "This is a course where kids learn how to paint with a really obvious art medium - none other than paint. What could be better?", teacher_id: 5)
 
 Parent.create!(name: "Eddard", password: "password")
 Parent.create!(name: "Aerys II", password: "password")
