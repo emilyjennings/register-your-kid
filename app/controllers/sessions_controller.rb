@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
         log_in(parent)
         redirect_to parent_path(session[:id])
       else
-        flash[:notice] = "that didn't work"
+        flash[:notice] = "That didn't work"
         render :new
       end
     end

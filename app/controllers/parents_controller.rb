@@ -30,19 +30,21 @@ class ParentsController < ApplicationController
       flash[:notice] = "You Signed Up. Now Log In!"
     elsif !@parent.name.empty? && @parent.kids[0].name.empty?
       redirect_to signup_path
-      flash[:notice] = "You have to create at least one kid, try again"
+      flash[:notice] = "Please try again, make sure you entered your name and one kid"
     else
+      !@parent.save
       redirect_to signup_path
       flash[:notice] = @parent.errors.full_messages.to_sentence
     end
   end
 
+#The parent show page is the dashboard where the user can see their kids and schedule
   def show
     @parent = Parent.find(params[:id])
     @courses = Course.all
     @kids = @parent.kids
-
   end
+
 
   private
 
@@ -53,12 +55,8 @@ class ParentsController < ApplicationController
       kids_attributes: [
         :name,
         :age,
-        :kid_number
         ]
       )
   end
 
-  # def require_login
-  #   redirect_to '/' if current_user.blank?
-  # end
 end

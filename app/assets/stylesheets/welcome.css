@@ -1,7 +1,8 @@
 body {
-  color: #874f6a;
-  background-color: #c6afba;
-  border: 4px solid #564d52;
+  color: #f2468b;
+  font-family: Georgia;
+  background-color: #f9edf2;
+  border: 4px solid #f450cb;
   border-radius: 7px;
   width: 60%;
   margin: 20px auto;
@@ -10,43 +11,49 @@ body {
 }
 
 a {
-  color: #513944;
+  color: #f450cb;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 a:visited {
-  color: #473f43;
+  color: #ef109a;
 }
 
 a:hover {
-  color: #f9439e;
+  color: #f3a8f7;
 }
 
 #border {
   margin: 20px;
-  border: 3px solid #f9d6eb;
+  border: 3px solid #f7d7e5;
   border-radius: 10px;
-  background-color: #f9d6eb;
+  background-color: #f7d7e5;
+
 }
 
 .border {
   margin: 20px;
   border-radius: 10px;
-  background-color: #f9d6eb;
+  background-color: #f7d7e5;
   font-size: 22px;
+  padding: 20px;
+  padding-bottom: 30px;
 }
 
 .courseborder {
   margin: 20px;
-  padding: 10px;
+  padding: 20px;
+  padding-bottom: 30px;
   border-radius: 10px;
-  background-color: #f9d6eb;
+  background-color: #f7d7e5;
 }
 
 .button {
   display: block;
   width: auto;
   margin: 20px;
-  border: 3px solid #f9d6eb;
+  border: 3px solid #f450cb;
   border-radius: 10px;
 }
 
