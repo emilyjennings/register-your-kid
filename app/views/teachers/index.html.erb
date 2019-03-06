@@ -3,5 +3,4 @@
   <h3><%=link_to "#{t.name}", teacher_path(t)%></h3>
 <%end%>
 
-<%= link_to "Go Back", parent_path(current_user)%>
-<p><%= link_to "Log Out", logout_path, method: :delete %></p>
+<%= render partial: 'parents/nav' %>

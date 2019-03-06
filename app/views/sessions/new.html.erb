@@ -1,4 +1,6 @@
-<%= render partial: 'parents/style' %>
+<h1>Register Your Kid!</h1>
+<img src="http://myfrenchclasses.org/sites/myfrenchclasses.org/files/art_class.jpg" alt="" width="300">
+
 
 <h1>Log In!</h1>
 <% if flash[:notice] %>
@@ -14,7 +16,10 @@
 <br>
 <%=f.submit 'Submit'%>
 <%end%>
-
+<br>
 <%=link_to "Login via GitHub", "/auth/github" %>
 
 <p>Not a new user? <%= link_to "Sign up now!", signup_path %></p>
+
+<%= render partial: 'parents/style' %>
+<%= render partial: 'parents/welcome_nav' %>

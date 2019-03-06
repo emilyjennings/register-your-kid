@@ -26,10 +26,11 @@
 
 <%=link_to 'Create a course!', new_course_path%>
 
-<%=render partial: 'parents/goback'%>
+<%= render partial: 'parents/nav' %>
 <p><%= link_to "Log Out", logout_path, method: :delete %></p>
 
 
 <%else%>
+  <%= render partial: 'parents/welcome_nav' %>
   <%=link_to "Log In to See More and Sign Up", login_path%>
 <%end%>

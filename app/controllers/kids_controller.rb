@@ -1,7 +1,7 @@
 
 
 class KidsController < ApplicationController
-
+  #I needed to put in the current user in some places for the nav to work
   def index
     @parent = Parent.find(params[:parent_id])
     @kids = @parent.kids
@@ -31,6 +31,7 @@ class KidsController < ApplicationController
   end
 
   def edit
+    @parent = current_user
     @kid = Kid.find(params[:id])
     @course = Course.find(params[:course_id])
   end

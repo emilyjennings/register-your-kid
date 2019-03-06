@@ -16,8 +16,4 @@
   <p>You need to be logged in to see this.</p>
 <%end%>
 
-<p><%= link_to "Browse courses", courses_path %></p>
-<p><%= link_to "View Your Kids", parent_kids_path(@parent.id) %></p>
-<p><%= link_to "View All Parents", parents_path %></p>
-<p><%= link_to "View All Teachers", teachers_path %></p>
-<%=render partial: 'sessions/logout'%>
+<%= render 'nav' %>

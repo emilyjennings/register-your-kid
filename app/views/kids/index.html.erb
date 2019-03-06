@@ -26,15 +26,14 @@
           $('#desc-<%=k.course.id%>').hide()
         })
       </script>
-      
+
     <%end%>
   </div>
 
 <%end%>
 
 <h2><%=link_to "Add more kids", new_parent_kid_path(@parent)%></h2>
-<%=render partial: 'sessions/logout'%>
-<%=render partial: 'parents/goback'%>
+<%= render partial: 'parents/nav' %>
 
 
 

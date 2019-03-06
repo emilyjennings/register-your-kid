@@ -1,10 +1,14 @@
 
 class CoursesController < ApplicationController
+
+  #for the nav bar to work, I needed to load the current user in some places
   def index
     @courses = Course.all
+    @parent = current_user
   end
 
   def show
+    @parent = current_user
     @course = Course.find(params[:id])
     respond_to do |format|
       format.html { render :show }
@@ -14,6 +18,7 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    @parent = current_user
   end
 
   #I wanted users to be able to submit a course themselves - maybe later the admin can do that

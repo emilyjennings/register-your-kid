@@ -1,10 +1,13 @@
+<h1>Register Your Kid!</h1>
+<img src="http://myfrenchclasses.org/sites/myfrenchclasses.org/files/art_class.jpg" alt="" width="300">
+
+
+<%= render 'welcome_nav' %>
 
 
 <div id="border">
   <%if logged_in?%>
     <h2>Welcome, <%=current_user.name.capitalize%>!</h2>
-    <p><%= link_to "Profile", parent_path(session[:id]) %></p>
-    <p><%= link_to "Log out", logout_path, method: :delete %></p>
   <%else%>
     <h2>Go ahead and <%= link_to 'Sign Up', signup_path%> or <%= link_to 'Log In', login_path%></h2>
   <%end%>

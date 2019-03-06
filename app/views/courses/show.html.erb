@@ -8,8 +8,8 @@
 
 
 <%if logged_in?%>
-  <div class="courseborder">
-    <h2>Students signed up:</h2>
+  <div class="courseborder" id="signedupborder">
+    <h2 class="signedup">Students signed up:</h2>
     <%@course.kids.each do |k|%>
       <% if k.age != 0 %>
         <p class="kids"><%=k.name.capitalize%>, age: <%=k.age%></p>
@@ -19,9 +19,7 @@
     <%end%>
   </div>
 
-    <p><%= link_to "Go Back to list of courses", courses_path%></p>
-    <p><%= link_to "Your Profile", parent_path(current_user)%></p>
-    <p><%= link_to "Log Out", logout_path, method: :delete %></p>
+    <%= render partial: 'parents/nav' %>
     <%current_user.kids.each do |k| %>
       <%if !k.name.empty?%>
         <p><%= link_to "Sign #{k.name} up for this course", edit_course_kid_path(@course, k) %></p>
@@ -48,8 +46,10 @@ $(function () {
       $("#start_time").text(values["start_time"]);
       $("#description").text(values["description"]);
       $("#teacher").text(values["teacher"]);
-      $("#age_group").text(values["age_group"]);
-      $(".kids").text('');
+      $("#age_group").text('age group:' + values["age_group"]);
+      $(".kids").hide();
+      $("#signedupborder").hide();
+
       // re-set the id to current on the link
       $(".js-next").attr("data-id", data["id"]);
     });

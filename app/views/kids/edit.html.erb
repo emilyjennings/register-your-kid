@@ -3,3 +3,5 @@
   <%= f.collection_select :course_id, Course.all, :id, :title, {:selected => @course.id}%>
   <%= f.submit "Submit" %>
 <%end%>
+
+<%= render partial: 'parents/nav' %>
