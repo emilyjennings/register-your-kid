@@ -1,0 +1,38 @@
+<div class="top">
+  <button id="top">&#8593;</button>
+</div>
+
+<button id="hamburger">&#9776;</button>
+
+
+<div class="nav">
+  <%= link_to 'Sign Up', signup_path%>
+  <%= link_to 'Log In', login_path%>
+  <%= link_to "Log out", logout_path, method: :delete %>
+  <%= link_to "Browse Courses", courses_path%>
+  <%= link_to 'Welcome page', root_path%>
+  <a href="" id="cross">&#735;</a>
+</div>
+
+<script>
+  $(".nav").hide();
+  $("#hamburger").click(function(){
+    $(".nav").slideToggle("slow", function(){
+      $("#hamburger").hide();
+      $(".nav").show();
+      $("#cross").show();
+    });
+  });
+
+
+  $("#cross").click(function(event){
+    event.preventDefault();
+    //click event that takes information from the event and prevents refresh
+    if ($("#cross").is(":visible")){
+      $(".nav").slideToggle("slow", function(){
+        $("#cross").hide();
+        $("#hamburger").show();
+      });
+    }
+  });
+</script>
