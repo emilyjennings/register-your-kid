@@ -1,5 +1,3 @@
-
-
 class SessionsController < ApplicationController
 
 
@@ -44,6 +42,5 @@ class SessionsController < ApplicationController
       session.clear
   end
 
-  private
 
 end

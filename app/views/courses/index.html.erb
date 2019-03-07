@@ -24,10 +24,9 @@
 
 <%if logged_in?%>
 
-<%=link_to 'Create a course!', new_course_path%>
+<h2><%=link_to 'Create a course!', new_course_path%></h2>
 
 <%= render partial: 'parents/nav' %>
-<p><%= link_to "Log Out", logout_path, method: :delete %></p>
 
 
 <%else%>

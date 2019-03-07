@@ -11,9 +11,10 @@
     <h3>Time: <%=@kid.course.start_time%></h3>
     <h3>Teacher: <%=link_to "#{@kid.course.teacher.name}", teacher_path(@kid.course.teacher.id)%></h3>
     <p></p>
-
   <%end%>
   <%= render partial: 'parents/nav' %>
+  <p><%= link_to "Browse Courses + Sign This Kid Up", courses_path %></p>
+
 
 <%else%>
   <p>You need to be logged in to see this.</p>
