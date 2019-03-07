@@ -39,7 +39,7 @@
 $(function () {
   $(".js-next").on("click", function(event) {
     event.preventDefault()
-    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1; //Makes the course number into a url string to send as a get request
     $.get("/courses/" + nextId + ".json", function(data) {
       var values = data
       $("#title").text(values["title"]);
@@ -47,7 +47,7 @@ $(function () {
       $("#description").text(values["description"]);
       $("#teacher").text(values["teacher"]);
       $("#age_group").text('age group:' + values["age_group"]);
-      //I need to later work on getting enrolled kids to display, for now hiding those 
+      //I need to later work on getting enrolled kids to display, for now hiding those
       $(".kids").hide();
       $("#signedupborder").hide();
 

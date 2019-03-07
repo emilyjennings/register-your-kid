@@ -20,6 +20,7 @@ I need models for classes, kids, parents, and teachers:
 * Parents have many classes, and have many Teachers through classes.
 * Courses belong to teachers, and belong to parents.
 * So, the many-to-many relationship in this project is Teachers and Parents, through classes. The join table will include another attribute besides foreign keys: (age group, start time)
+(Changed later so the join table is the course table)
 
 Migrations to write
 * kids have a name and an age and belong_to parents, foreign key for parent_id
@@ -28,7 +29,7 @@ Migrations to write
 * Courses have a title, age group, start_time, foreign keys for teachers and parents (then can parents have many classes?)
 
 12.23.18
-Got the login and sessions working, nested forms to associate kids with the parent users.
+Got the login and sessions working, nested forms to associate kids with the parent users on login.
 
 To do:
 * Let parents sign their kids up for classes through a nested route. They get a form with checkboxes to pick which kids are in the classes, and then the course is submitted. If this is too complicated with extra nested forms, then just let the parent sign up for classes in general, and view them in /parent/id/courses/show. The classes need to be associated with parents through parent_id attributes.
@@ -63,7 +64,9 @@ I added some comments, changed the styling, and added more seeds. The center I c
 
 I messed around with the authentication and validations here. It was hard because the kid when first created at sign up can end up having no age, and that's not ideal. I needed to figure out how to have the required age field. I just made the built in attributes in the form (the default values) set to "" and I used activerecord validations to make sure the correct fields were entered.
 
-I need to work on making the way I identify the user - right now it's one of  current_user, session[:id] and parent.id - it needs to be one consistent thing across all views.
+I need to work on making the way I identify the user - right now it's one of  current_user, session[:id] and parent.id - it needs to be one consistent thing across all views. probably current_user is best.
+
+I also added a nav bar.
 
 
 ## Ruby version

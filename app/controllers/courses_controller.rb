@@ -11,8 +11,8 @@ class CoursesController < ApplicationController
     @parent = current_user
     @course = Course.find(params[:id])
     respond_to do |format|
-      format.html { render :show }
-      format.json { render json: @course.to_json }
+      format.html { render :show } #if it is rendered as html, take to show page
+      format.json { render json: @course.to_json } #if rendered as json, take to page where the data is a hash
     end
   end
 
